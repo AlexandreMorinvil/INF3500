@@ -1,0 +1,991 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Thu Feb  6 14:34:26 2020
+# Process ID: 107652
+# Current directory: Y:/H2020/INF3500/TP3/Lab3
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent109136 Y:\H2020\INF3500\TP3\Lab3\Lab2.xpr
+# Log file: Y:/H2020/INF3500/TP3/Lab3/vivado.log
+# Journal file: Y:/H2020/INF3500/TP3/Lab3\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project Y:/H2020/INF3500/TP3/Lab3/Lab2.xpr
+INFO: [Project 1-313] Project file moved from 'Y:/H2020/INF3500/TP2/Lab2' since last save.
+WARNING: [Project 1-312] File not found as 'Y:/H2020/INF3500/TP3/Fichiers a tranferer/pipeline_tb_behav.wcfg'; using path 'Y:/H2020/INF3500/TP2/Fichiers a tranferer/pipeline_tb_behav.wcfg' instead.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Logiciels/Xilinx/Vivado/2018.3/data/ip'.
+open_project: Time (s): cpu = 00:00:14 ; elapsed = 00:00:08 . Memory (MB): peak = 769.016 ; gain = 165.422
+update_compile_order -fileset sources_1
+file mkdir Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+close [ open Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/CH_MODULE_tb.v w ]
+add_files -fileset sim_1 Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/CH_MODULE_tb.v
+update_compile_order -fileset sim_1
+set_property top CH_MODULE_tb [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+update_compile_order -fileset sim_1
+set_property file_type VHDL [get_files  Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/CH_MODULE_tb.v]
+update_compile_order -fileset sim_1
+export_ip_user_files -of_objects  [get_files Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/CH_MODULE_tb.v] -no_script -reset -force -quiet
+remove_files  -fileset sim_1 Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/CH_MODULE_tb.v
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+close [ open Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/CH_MODULE_tb.vhd w ]
+add_files -fileset sim_1 Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/CH_MODULE_tb.vhd
+update_compile_order -fileset sim_1
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+import_files -fileset sim_1 -norecurse Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/CH_MODULE_tb.vhd
+update_files -from_files Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/CH_MODULE_tb.vhd -to_files Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/imports/new/CH_MODULE_tb.vhd -filesets [get_filesets *]
+INFO: [filemgmt 20-762] Replacing file 'Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/imports/new/CH_MODULE_tb.vhd' with file 'Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/CH_MODULE_tb.vhd'.
+INFO: [filemgmt 20-1080] Importing file from 'Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/CH_MODULE_tb.vhd' to 'Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/imports/new/CH_MODULE_tb.vhd'.
+update_compile_order -fileset sim_1
+update_compile_order -fileset sim_1
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+close [ open Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/ch_tb.vhd w ]
+add_files -fileset sim_1 Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/ch_tb.vhd
+update_compile_order -fileset sim_1
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+import_files -fileset sim_1 -force -norecurse Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/CH_MODULE_tb.vhd
+update_compile_order -fileset sim_1
+update_compile_order -fileset sim_1
+export_ip_user_files -of_objects  [get_files Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sources_1/imports/labo2-circuits-combinatoires/top-tb.vhd] -no_script -reset -force -quiet
+remove_files  Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sources_1/imports/labo2-circuits-combinatoires/top-tb.vhd
+update_compile_order -fileset sim_1
+export_ip_user_files -of_objects  [get_files Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/imports/new/CH_MODULE_tb.vhd] -no_script -reset -force -quiet
+remove_files  -fileset sim_1 Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/imports/new/CH_MODULE_tb.vhd
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+import_files -fileset sim_1 -force -norecurse Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/CH_MODULE_tb.vhd
+update_compile_order -fileset sim_1
+export_ip_user_files -of_objects  [get_files Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/ch_tb.vhd] -no_script -reset -force -quiet
+remove_files  -fileset sim_1 Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/ch_tb.vhd
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sources_1/imports/labo2-circuits-combinatoires/top-tb.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sources_1/imports/new/ch.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sources_1/imports/labo2-circuits-combinatoires/top.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/CH_MODULE_tb.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/imports/new/CH_MODULE_tb.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sources_1/imports/labo2-circuits-combinatoires/top-tb.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sources_1/imports/new/ch.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sources_1/imports/labo2-circuits-combinatoires/top.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/CH_MODULE_tb.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/imports/new/CH_MODULE_tb.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sources_1/imports/labo2-circuits-combinatoires/top-tb.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sources_1/imports/new/ch.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sources_1/imports/labo2-circuits-combinatoires/top.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/CH_MODULE_tb.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/imports/new/CH_MODULE_tb.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sources_1/imports/labo2-circuits-combinatoires/top-tb.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sources_1/imports/new/ch.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sources_1/imports/labo2-circuits-combinatoires/top.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/CH_MODULE_tb.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/imports/new/CH_MODULE_tb.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sources_1/imports/labo2-circuits-combinatoires/top-tb.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sources_1/imports/new/ch.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sources_1/imports/labo2-circuits-combinatoires/top.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/CH_MODULE_tb.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/imports/new/CH_MODULE_tb.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sources_1/imports/labo2-circuits-combinatoires/top-tb.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sources_1/imports/new/ch.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sources_1/imports/labo2-circuits-combinatoires/top.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/CH_MODULE_tb.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/imports/new/CH_MODULE_tb.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sources_1/imports/labo2-circuits-combinatoires/top-tb.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sources_1/imports/new/ch.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sources_1/imports/labo2-circuits-combinatoires/top.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/CH_MODULE_tb.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/imports/new/CH_MODULE_tb.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sources_1/imports/labo2-circuits-combinatoires/top-tb.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sources_1/imports/new/ch.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sources_1/imports/labo2-circuits-combinatoires/top.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/CH_MODULE_tb.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/imports/new/CH_MODULE_tb.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sources_1/imports/labo2-circuits-combinatoires/top-tb.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sources_1/imports/new/ch.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sources_1/imports/labo2-circuits-combinatoires/top.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/CH_MODULE_tb.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/imports/new/CH_MODULE_tb.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sources_1/imports/labo2-circuits-combinatoires/top-tb.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sources_1/imports/new/ch.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sources_1/imports/labo2-circuits-combinatoires/top.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/CH_MODULE_tb.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/imports/new/CH_MODULE_tb.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sources_1/imports/labo2-circuits-combinatoires/top-tb.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sources_1/imports/new/ch.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sources_1/imports/labo2-circuits-combinatoires/top.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/CH_MODULE_tb.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/imports/new/CH_MODULE_tb.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sources_1/imports/labo2-circuits-combinatoires/top-tb.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sources_1/imports/new/ch.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sources_1/imports/labo2-circuits-combinatoires/top.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/CH_MODULE_tb.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/imports/new/CH_MODULE_tb.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sources_1/imports/labo2-circuits-combinatoires/top-tb.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sources_1/imports/new/ch.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sources_1/imports/labo2-circuits-combinatoires/top.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/CH_MODULE_tb.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/imports/new/CH_MODULE_tb.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sources_1/imports/labo2-circuits-combinatoires/top-tb.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sources_1/imports/new/ch.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sources_1/imports/labo2-circuits-combinatoires/top.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/CH_MODULE_tb.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/imports/new/CH_MODULE_tb.vhd:]
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+close [ open Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/MAJ_MODULE_tb.v w ]
+add_files -fileset sim_1 Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/MAJ_MODULE_tb.v
+update_compile_order -fileset sim_1
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sources_1/imports/labo2-circuits-combinatoires/top-tb.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sources_1/imports/new/ch.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sources_1/imports/labo2-circuits-combinatoires/top.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/CH_MODULE_tb.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/imports/new/CH_MODULE_tb.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sources_1/imports/labo2-circuits-combinatoires/top-tb.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sources_1/imports/new/ch.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sources_1/imports/labo2-circuits-combinatoires/top.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/CH_MODULE_tb.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/imports/new/CH_MODULE_tb.vhd:]
+export_ip_user_files -of_objects  [get_files Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/MAJ_MODULE_tb.v] -no_script -reset -force -quiet
+remove_files  -fileset sim_1 Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/MAJ_MODULE_tb.v
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+close [ open Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/MAJ_MODULE_tb.vhd w ]
+add_files -fileset sim_1 Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/MAJ_MODULE_tb.vhd
+update_compile_order -fileset sim_1
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+close [ open Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/SIGMA0_MODULE_tb.vhd w ]
+add_files -fileset sim_1 Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/SIGMA0_MODULE_tb.vhd
+update_compile_order -fileset sim_1
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+close [ open Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/SIGMA1_MODULE_tb.vhd w ]
+add_files -fileset sim_1 Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/SIGMA1_MODULE_tb.vhd
+update_compile_order -fileset sim_1
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+close [ open Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/SIGMA2_MODULE_tb.vhd w ]
+add_files -fileset sim_1 Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/SIGMA2_MODULE_tb.vhd
+update_compile_order -fileset sim_1
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+close [ open Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/SIGMA3_MODULE_tb.vhd w ]
+add_files -fileset sim_1 Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/SIGMA3_MODULE_tb.vhd
+update_compile_order -fileset sim_1
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/SIGMA3_MODULE_tb.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sources_1/imports/labo2-circuits-combinatoires/top-tb.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/CH_MODULE_tb.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/MAJ_MODULE_tb.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/SIGMA2_MODULE_tb.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/imports/new/CH_MODULE_tb.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/SIGMA1_MODULE_tb.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/SIGMA3_MODULE_tb.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sources_1/imports/labo2-circuits-combinatoires/top-tb.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/CH_MODULE_tb.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/MAJ_MODULE_tb.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/SIGMA2_MODULE_tb.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/imports/new/CH_MODULE_tb.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/SIGMA1_MODULE_tb.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/SIGMA3_MODULE_tb.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sources_1/imports/labo2-circuits-combinatoires/top-tb.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/CH_MODULE_tb.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/MAJ_MODULE_tb.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/SIGMA2_MODULE_tb.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/imports/new/CH_MODULE_tb.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/SIGMA1_MODULE_tb.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/SIGMA3_MODULE_tb.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sources_1/imports/labo2-circuits-combinatoires/top-tb.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/CH_MODULE_tb.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/MAJ_MODULE_tb.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/SIGMA2_MODULE_tb.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/imports/new/CH_MODULE_tb.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/SIGMA1_MODULE_tb.vhd:]
+set_property top ch_tb [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+update_compile_order -fileset sim_1
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'Y:/H2020/INF3500/TP3/Lab3/Lab2.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'ch_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'Y:/H2020/INF3500/TP3/Lab3/Lab2.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj ch_tb_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sources_1/imports/new/ch.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ch'
+INFO: [VRFC 10-163] Analyzing VHDL file "Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/imports/new/CH_MODULE_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ch_tb'
+ERROR: [VRFC 10-2989] 'leds' is not declared [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/imports/new/CH_MODULE_tb.vhd:313]
+ERROR: [VRFC 10-3782] unit 'ch_tb' ignored due to previous errors [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/imports/new/CH_MODULE_tb.vhd:14]
+INFO: [VRFC 10-3070] VHDL file 'Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/imports/new/CH_MODULE_tb.vhd' ignored due to errors
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-99] Step results log file:'Y:/H2020/INF3500/TP3/Lab3/Lab2.sim/sim_1/behav/xsim/xvhdl.log'
+ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or 'Y:/H2020/INF3500/TP3/Lab3/Lab2.sim/sim_1/behav/xsim/xvhdl.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+set_property top ch [current_fileset]
+update_compile_order -fileset sources_1
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'Y:/H2020/INF3500/TP3/Lab3/Lab2.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'ch_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'Y:/H2020/INF3500/TP3/Lab3/Lab2.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj ch_tb_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sources_1/imports/new/ch.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ch'
+INFO: [VRFC 10-163] Analyzing VHDL file "Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/imports/new/CH_MODULE_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ch_tb'
+ERROR: [VRFC 10-2989] 'leds' is not declared [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/imports/new/CH_MODULE_tb.vhd:313]
+ERROR: [VRFC 10-3782] unit 'ch_tb' ignored due to previous errors [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/imports/new/CH_MODULE_tb.vhd:14]
+INFO: [VRFC 10-3070] VHDL file 'Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/imports/new/CH_MODULE_tb.vhd' ignored due to errors
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-99] Step results log file:'Y:/H2020/INF3500/TP3/Lab3/Lab2.sim/sim_1/behav/xsim/xvhdl.log'
+ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or 'Y:/H2020/INF3500/TP3/Lab3/Lab2.sim/sim_1/behav/xsim/xvhdl.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'Y:/H2020/INF3500/TP3/Lab3/Lab2.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'ch_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'Y:/H2020/INF3500/TP3/Lab3/Lab2.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj ch_tb_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sources_1/imports/new/ch.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ch'
+INFO: [VRFC 10-163] Analyzing VHDL file "Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/imports/new/CH_MODULE_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ch_tb'
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'Y:/H2020/INF3500/TP3/Lab3/Lab2.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.3
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: C:/Logiciels/Xilinx/Vivado/2018.3/bin/unwrapped/win64.o/xelab.exe -wto cdd04550e6f94f19b54b6863c20996ed --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot ch_tb_behav xil_defaultlib.ch_tb -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+ERROR: [VRFC 10-664] expression has 4 elements ; expected 32 [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/imports/new/CH_MODULE_tb.vhd:18]
+ERROR: [XSIM 43-3321] Static elaboration of top level VHDL design unit ch_tb in library work failed.
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-99] Step results log file:'Y:/H2020/INF3500/TP3/Lab3/Lab2.sim/sim_1/behav/xsim/elaborate.log'
+ERROR: [USF-XSim-62] 'elaborate' step failed with error(s). Please check the Tcl console output or 'Y:/H2020/INF3500/TP3/Lab3/Lab2.sim/sim_1/behav/xsim/elaborate.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'Y:/H2020/INF3500/TP3/Lab3/Lab2.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'ch_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'Y:/H2020/INF3500/TP3/Lab3/Lab2.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj ch_tb_vhdl.prj"
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'Y:/H2020/INF3500/TP3/Lab3/Lab2.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.3
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: C:/Logiciels/Xilinx/Vivado/2018.3/bin/unwrapped/win64.o/xelab.exe -wto cdd04550e6f94f19b54b6863c20996ed --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot ch_tb_behav xil_defaultlib.ch_tb -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+ERROR: [VRFC 10-664] expression has 4 elements ; expected 32 [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/imports/new/CH_MODULE_tb.vhd:18]
+ERROR: [XSIM 43-3321] Static elaboration of top level VHDL design unit ch_tb in library work failed.
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-99] Step results log file:'Y:/H2020/INF3500/TP3/Lab3/Lab2.sim/sim_1/behav/xsim/elaborate.log'
+ERROR: [USF-XSim-62] 'elaborate' step failed with error(s). Please check the Tcl console output or 'Y:/H2020/INF3500/TP3/Lab3/Lab2.sim/sim_1/behav/xsim/elaborate.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/SIGMA3_MODULE_tb.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sources_1/imports/labo2-circuits-combinatoires/top-tb.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/MAJ_MODULE_tb.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/CH_MODULE_tb.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/MAJ_MODULE_tb.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/SIGMA2_MODULE_tb.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/imports/new/CH_MODULE_tb.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/SIGMA1_MODULE_tb.vhd:]
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'Y:/H2020/INF3500/TP3/Lab3/Lab2.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'ch_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'Y:/H2020/INF3500/TP3/Lab3/Lab2.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj ch_tb_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/imports/new/CH_MODULE_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ch_tb'
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'Y:/H2020/INF3500/TP3/Lab3/Lab2.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.3
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: C:/Logiciels/Xilinx/Vivado/2018.3/bin/unwrapped/win64.o/xelab.exe -wto cdd04550e6f94f19b54b6863c20996ed --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot ch_tb_behav xil_defaultlib.ch_tb -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+ERROR: [VRFC 10-664] expression has 4 elements ; expected 32 [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/imports/new/CH_MODULE_tb.vhd:19]
+ERROR: [XSIM 43-3321] Static elaboration of top level VHDL design unit ch_tb in library work failed.
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-99] Step results log file:'Y:/H2020/INF3500/TP3/Lab3/Lab2.sim/sim_1/behav/xsim/elaborate.log'
+ERROR: [USF-XSim-62] 'elaborate' step failed with error(s). Please check the Tcl console output or 'Y:/H2020/INF3500/TP3/Lab3/Lab2.sim/sim_1/behav/xsim/elaborate.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'Y:/H2020/INF3500/TP3/Lab3/Lab2.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'ch_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'Y:/H2020/INF3500/TP3/Lab3/Lab2.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj ch_tb_vhdl.prj"
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'Y:/H2020/INF3500/TP3/Lab3/Lab2.sim/sim_1/behav/xsim'
+INFO: [Common 17-41] Interrupt caught. Command should exit soon.
+Vivado Simulator 2018.3
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: C:/Logiciels/Xilinx/Vivado/2018.3/bin/unwrapped/win64.o/xelab.exe -wto cdd04550e6f94f19b54b6863c20996ed --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot ch_tb_behav xil_defaultlib.ch_tb -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+ERROR: [VRFC 10-664] expression has 4 elements ; expected 32 [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/imports/new/CH_MODULE_tb.vhd:19]
+ERROR: [XSIM 43-3321] Static elaboration of top level VHDL design unit ch_tb in library work failed.
+INFO: [Common 17-344] 'run_program' was cancelled
+INFO: [Vivado 12-5357] 'elaborate' step aborted
+INFO: [Common 17-344] 'launch_simulation' was cancelled
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'Y:/H2020/INF3500/TP3/Lab3/Lab2.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'ch_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'Y:/H2020/INF3500/TP3/Lab3/Lab2.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj ch_tb_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/imports/new/CH_MODULE_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ch_tb'
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'Y:/H2020/INF3500/TP3/Lab3/Lab2.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.3
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: C:/Logiciels/Xilinx/Vivado/2018.3/bin/unwrapped/win64.o/xelab.exe -wto cdd04550e6f94f19b54b6863c20996ed --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot ch_tb_behav xil_defaultlib.ch_tb -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+ERROR: [VRFC 10-664] expression has 4 elements ; expected 32 [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/imports/new/CH_MODULE_tb.vhd:17]
+ERROR: [XSIM 43-3321] Static elaboration of top level VHDL design unit ch_tb in library work failed.
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-99] Step results log file:'Y:/H2020/INF3500/TP3/Lab3/Lab2.sim/sim_1/behav/xsim/elaborate.log'
+ERROR: [USF-XSim-62] 'elaborate' step failed with error(s). Please check the Tcl console output or 'Y:/H2020/INF3500/TP3/Lab3/Lab2.sim/sim_1/behav/xsim/elaborate.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+export_ip_user_files -of_objects  [get_files Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sources_1/imports/labo2-circuits-combinatoires/top.vhd] -no_script -reset -force -quiet
+remove_files  Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sources_1/imports/labo2-circuits-combinatoires/top.vhd
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'Y:/H2020/INF3500/TP3/Lab3/Lab2.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'ch_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'Y:/H2020/INF3500/TP3/Lab3/Lab2.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj ch_tb_vhdl.prj"
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'Y:/H2020/INF3500/TP3/Lab3/Lab2.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.3
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: C:/Logiciels/Xilinx/Vivado/2018.3/bin/unwrapped/win64.o/xelab.exe -wto cdd04550e6f94f19b54b6863c20996ed --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot ch_tb_behav xil_defaultlib.ch_tb -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+ERROR: [VRFC 10-664] expression has 4 elements ; expected 32 [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/imports/new/CH_MODULE_tb.vhd:17]
+ERROR: [XSIM 43-3321] Static elaboration of top level VHDL design unit ch_tb in library work failed.
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-99] Step results log file:'Y:/H2020/INF3500/TP3/Lab3/Lab2.sim/sim_1/behav/xsim/elaborate.log'
+ERROR: [USF-XSim-62] 'elaborate' step failed with error(s). Please check the Tcl console output or 'Y:/H2020/INF3500/TP3/Lab3/Lab2.sim/sim_1/behav/xsim/elaborate.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/SIGMA3_MODULE_tb.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sources_1/imports/labo2-circuits-combinatoires/top-tb.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sources_1/imports/new/ch.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sources_1/imports/labo2-circuits-combinatoires/top.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/MAJ_MODULE_tb.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/CH_MODULE_tb.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/MAJ_MODULE_tb.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/SIGMA2_MODULE_tb.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/imports/new/CH_MODULE_tb.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/SIGMA1_MODULE_tb.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/SIGMA3_MODULE_tb.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sources_1/imports/labo2-circuits-combinatoires/top-tb.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sources_1/imports/new/ch.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sources_1/imports/labo2-circuits-combinatoires/top.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/MAJ_MODULE_tb.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/CH_MODULE_tb.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/MAJ_MODULE_tb.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/SIGMA2_MODULE_tb.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/imports/new/CH_MODULE_tb.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/SIGMA1_MODULE_tb.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/SIGMA3_MODULE_tb.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sources_1/imports/labo2-circuits-combinatoires/top-tb.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sources_1/imports/new/ch.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sources_1/imports/labo2-circuits-combinatoires/top.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/MAJ_MODULE_tb.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/CH_MODULE_tb.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/MAJ_MODULE_tb.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/SIGMA2_MODULE_tb.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/imports/new/CH_MODULE_tb.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/SIGMA1_MODULE_tb.vhd:]
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'Y:/H2020/INF3500/TP3/Lab3/Lab2.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'ch_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'Y:/H2020/INF3500/TP3/Lab3/Lab2.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj ch_tb_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/imports/new/CH_MODULE_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ch_tb'
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'Y:/H2020/INF3500/TP3/Lab3/Lab2.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.3
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: C:/Logiciels/Xilinx/Vivado/2018.3/bin/unwrapped/win64.o/xelab.exe -wto cdd04550e6f94f19b54b6863c20996ed --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot ch_tb_behav xil_defaultlib.ch_tb -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+ERROR: [VRFC 10-664] expression has 4 elements ; expected 32 [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/imports/new/CH_MODULE_tb.vhd:84]
+ERROR: [XSIM 43-3321] Static elaboration of top level VHDL design unit ch_tb in library work failed.
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-99] Step results log file:'Y:/H2020/INF3500/TP3/Lab3/Lab2.sim/sim_1/behav/xsim/elaborate.log'
+ERROR: [USF-XSim-62] 'elaborate' step failed with error(s). Please check the Tcl console output or 'Y:/H2020/INF3500/TP3/Lab3/Lab2.sim/sim_1/behav/xsim/elaborate.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+launch_simulation: Time (s): cpu = 00:00:00 ; elapsed = 00:00:08 . Memory (MB): peak = 957.621 ; gain = 0.000
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'Y:/H2020/INF3500/TP3/Lab3/Lab2.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'ch_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'Y:/H2020/INF3500/TP3/Lab3/Lab2.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj ch_tb_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/imports/new/CH_MODULE_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ch_tb'
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'Y:/H2020/INF3500/TP3/Lab3/Lab2.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.3
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: C:/Logiciels/Xilinx/Vivado/2018.3/bin/unwrapped/win64.o/xelab.exe -wto cdd04550e6f94f19b54b6863c20996ed --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot ch_tb_behav xil_defaultlib.ch_tb -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling architecture behavioral of entity xil_defaultlib.ch [ch_default]
+Compiling architecture ch_tb of entity xil_defaultlib.ch_tb
+Built simulation snapshot ch_tb_behav
+
+****** Webtalk v2018.3 (64-bit)
+  **** SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+  **** IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source Y:/H2020/INF3500/TP3/Lab3/Lab2.sim/sim_1/behav/xsim/xsim.dir/ch_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Thu Feb  6 16:46:24 2020...
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 957.621 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '6' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'Y:/H2020/INF3500/TP3/Lab3/Lab2.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "ch_tb_behav -key {Behavioral:sim_1:Functional:ch_tb} -tclbatch {ch_tb.tcl} -view {{Y:/H2020/INF3500/TP2/Fichiers a tranferer/pipeline_tb_behav.wcfg}} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2018.3
+Time resolution is 1 ps
+open_wave_config {Y:/H2020/INF3500/TP2/Fichiers a tranferer/pipeline_tb_behav.wcfg}
+WARNING: Simulation object /pipeline_tb/switches was not found in the design.
+WARNING: Simulation object /pipeline_tb/leds was not found in the design.
+WARNING: Simulation object /pipeline_tb/INPUTS was not found in the design.
+WARNING: Simulation object /pipeline_tb/OUTPUTS was not found in the design.
+source ch_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+Error: Simulation successful
+Time: 640 ns  Iteration: 0  Process: /ch_tb/line__301  File: Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/imports/new/CH_MODULE_tb.vhd
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'ch_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:05 ; elapsed = 00:00:12 . Memory (MB): peak = 957.621 ; gain = 0.000
+set_property top maj_tb [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+update_compile_order -fileset sim_1
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'Y:/H2020/INF3500/TP3/Lab3/Lab2.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'maj_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'Y:/H2020/INF3500/TP3/Lab3/Lab2.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj maj_tb_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sources_1/new/maj.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'maj'
+INFO: [VRFC 10-163] Analyzing VHDL file "Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/MAJ_MODULE_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'maj_tb'
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'Y:/H2020/INF3500/TP3/Lab3/Lab2.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.3
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: C:/Logiciels/Xilinx/Vivado/2018.3/bin/unwrapped/win64.o/xelab.exe -wto cdd04550e6f94f19b54b6863c20996ed --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot maj_tb_behav xil_defaultlib.maj_tb -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling architecture behavioral of entity xil_defaultlib.maj [maj_default]
+Compiling architecture maj_tb of entity xil_defaultlib.maj_tb
+Built simulation snapshot maj_tb_behav
+
+****** Webtalk v2018.3 (64-bit)
+  **** SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+  **** IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source Y:/H2020/INF3500/TP3/Lab3/Lab2.sim/sim_1/behav/xsim/xsim.dir/maj_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Thu Feb  6 17:18:18 2020...
+INFO: [USF-XSim-69] 'elaborate' step finished in '4' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'Y:/H2020/INF3500/TP3/Lab3/Lab2.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "maj_tb_behav -key {Behavioral:sim_1:Functional:maj_tb} -tclbatch {maj_tb.tcl} -view {{Y:/H2020/INF3500/TP2/Fichiers a tranferer/pipeline_tb_behav.wcfg}} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2018.3
+Time resolution is 1 ps
+open_wave_config {Y:/H2020/INF3500/TP2/Fichiers a tranferer/pipeline_tb_behav.wcfg}
+WARNING: Simulation object /pipeline_tb/switches was not found in the design.
+WARNING: Simulation object /pipeline_tb/leds was not found in the design.
+WARNING: Simulation object /pipeline_tb/INPUTS was not found in the design.
+WARNING: Simulation object /pipeline_tb/OUTPUTS was not found in the design.
+source maj_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+Failure: Simulation failed
+Time: 50 ns  Iteration: 0  Process: /maj_tb/line__303  File: Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/MAJ_MODULE_tb.vhd
+$finish called at time : 50 ns : File "Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/MAJ_MODULE_tb.vhd" Line 315
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'maj_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:09 . Memory (MB): peak = 957.621 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'Y:/H2020/INF3500/TP3/Lab3/Lab2.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'maj_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'Y:/H2020/INF3500/TP3/Lab3/Lab2.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj maj_tb_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/MAJ_MODULE_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'maj_tb'
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'Y:/H2020/INF3500/TP3/Lab3/Lab2.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.3
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: C:/Logiciels/Xilinx/Vivado/2018.3/bin/unwrapped/win64.o/xelab.exe -wto cdd04550e6f94f19b54b6863c20996ed --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot maj_tb_behav xil_defaultlib.maj_tb -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling architecture behavioral of entity xil_defaultlib.maj [maj_default]
+Compiling architecture maj_tb of entity xil_defaultlib.maj_tb
+Built simulation snapshot maj_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'Y:/H2020/INF3500/TP3/Lab3/Lab2.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "maj_tb_behav -key {Behavioral:sim_1:Functional:maj_tb} -tclbatch {maj_tb.tcl} -view {{Y:/H2020/INF3500/TP2/Fichiers a tranferer/pipeline_tb_behav.wcfg}} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2018.3
+Time resolution is 1 ps
+open_wave_config {Y:/H2020/INF3500/TP2/Fichiers a tranferer/pipeline_tb_behav.wcfg}
+WARNING: Simulation object /pipeline_tb/switches was not found in the design.
+WARNING: Simulation object /pipeline_tb/leds was not found in the design.
+WARNING: Simulation object /pipeline_tb/INPUTS was not found in the design.
+WARNING: Simulation object /pipeline_tb/OUTPUTS was not found in the design.
+source maj_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+Error: Simulation successful
+Time: 640 ns  Iteration: 0  Process: /maj_tb/line__302  File: Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/MAJ_MODULE_tb.vhd
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'maj_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:08 . Memory (MB): peak = 957.621 ; gain = 0.000
+set_property top sigma0_tb [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'Y:/H2020/INF3500/TP3/Lab3/Lab2.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'sigma0_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'Y:/H2020/INF3500/TP3/Lab3/Lab2.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj sigma0_tb_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sources_1/new/sigma0.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'sigma0'
+INFO: [VRFC 10-163] Analyzing VHDL file "Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/SIGMA0_MODULE_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'sigma0_tb'
+ERROR: [VRFC 10-2989] 'outpu' is not declared [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/SIGMA0_MODULE_tb.vhd:173]
+ERROR: [VRFC 10-3782] unit 'sigma0_tb' ignored due to previous errors [Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/SIGMA0_MODULE_tb.vhd:14]
+INFO: [VRFC 10-3070] VHDL file 'Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/SIGMA0_MODULE_tb.vhd' ignored due to errors
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-99] Step results log file:'Y:/H2020/INF3500/TP3/Lab3/Lab2.sim/sim_1/behav/xsim/xvhdl.log'
+ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or 'Y:/H2020/INF3500/TP3/Lab3/Lab2.sim/sim_1/behav/xsim/xvhdl.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+update_compile_order -fileset sim_1
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'Y:/H2020/INF3500/TP3/Lab3/Lab2.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'sigma0_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'Y:/H2020/INF3500/TP3/Lab3/Lab2.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj sigma0_tb_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sources_1/new/sigma0.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'sigma0'
+INFO: [VRFC 10-163] Analyzing VHDL file "Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/SIGMA0_MODULE_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'sigma0_tb'
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'Y:/H2020/INF3500/TP3/Lab3/Lab2.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.3
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: C:/Logiciels/Xilinx/Vivado/2018.3/bin/unwrapped/win64.o/xelab.exe -wto cdd04550e6f94f19b54b6863c20996ed --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot sigma0_tb_behav xil_defaultlib.sigma0_tb -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling architecture behavioral of entity xil_defaultlib.sigma0 [sigma0_default]
+Compiling architecture sigma0_tb of entity xil_defaultlib.sigma0_tb
+Built simulation snapshot sigma0_tb_behav
+
+****** Webtalk v2018.3 (64-bit)
+  **** SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+  **** IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source Y:/H2020/INF3500/TP3/Lab3/Lab2.sim/sim_1/behav/xsim/xsim.dir/sigma0_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Thu Feb  6 17:20:33 2020...
+INFO: [USF-XSim-69] 'elaborate' step finished in '4' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'Y:/H2020/INF3500/TP3/Lab3/Lab2.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "sigma0_tb_behav -key {Behavioral:sim_1:Functional:sigma0_tb} -tclbatch {sigma0_tb.tcl} -view {{Y:/H2020/INF3500/TP2/Fichiers a tranferer/pipeline_tb_behav.wcfg}} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2018.3
+Time resolution is 1 ps
+open_wave_config {Y:/H2020/INF3500/TP2/Fichiers a tranferer/pipeline_tb_behav.wcfg}
+WARNING: Simulation object /pipeline_tb/switches was not found in the design.
+WARNING: Simulation object /pipeline_tb/leds was not found in the design.
+WARNING: Simulation object /pipeline_tb/INPUTS was not found in the design.
+WARNING: Simulation object /pipeline_tb/OUTPUTS was not found in the design.
+source sigma0_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+Error: Simulation successful
+Time: 640 ns  Iteration: 0  Process: /sigma0_tb/line__164  File: Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/SIGMA0_MODULE_tb.vhd
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'sigma0_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:10 . Memory (MB): peak = 957.621 ; gain = 0.000
+set_property top sigma1_tb [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+update_compile_order -fileset sim_1
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'Y:/H2020/INF3500/TP3/Lab3/Lab2.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'sigma1_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'Y:/H2020/INF3500/TP3/Lab3/Lab2.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj sigma1_tb_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sources_1/new/sigma1.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'sigma1'
+INFO: [VRFC 10-163] Analyzing VHDL file "Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/SIGMA1_MODULE_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'sigma1_tb'
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'Y:/H2020/INF3500/TP3/Lab3/Lab2.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.3
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: C:/Logiciels/Xilinx/Vivado/2018.3/bin/unwrapped/win64.o/xelab.exe -wto cdd04550e6f94f19b54b6863c20996ed --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot sigma1_tb_behav xil_defaultlib.sigma1_tb -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling architecture behavioral of entity xil_defaultlib.sigma1 [sigma1_default]
+Compiling architecture sigma1_tb of entity xil_defaultlib.sigma1_tb
+Built simulation snapshot sigma1_tb_behav
+
+****** Webtalk v2018.3 (64-bit)
+  **** SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+  **** IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source Y:/H2020/INF3500/TP3/Lab3/Lab2.sim/sim_1/behav/xsim/xsim.dir/sigma1_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Thu Feb  6 17:21:18 2020...
+INFO: [USF-XSim-69] 'elaborate' step finished in '4' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'Y:/H2020/INF3500/TP3/Lab3/Lab2.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "sigma1_tb_behav -key {Behavioral:sim_1:Functional:sigma1_tb} -tclbatch {sigma1_tb.tcl} -view {{Y:/H2020/INF3500/TP2/Fichiers a tranferer/pipeline_tb_behav.wcfg}} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2018.3
+Time resolution is 1 ps
+open_wave_config {Y:/H2020/INF3500/TP2/Fichiers a tranferer/pipeline_tb_behav.wcfg}
+WARNING: Simulation object /pipeline_tb/switches was not found in the design.
+WARNING: Simulation object /pipeline_tb/leds was not found in the design.
+WARNING: Simulation object /pipeline_tb/INPUTS was not found in the design.
+WARNING: Simulation object /pipeline_tb/OUTPUTS was not found in the design.
+source sigma1_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+Error: Simulation successful
+Time: 640 ns  Iteration: 0  Process: /sigma1_tb/line__165  File: Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/SIGMA1_MODULE_tb.vhd
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'sigma1_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:09 . Memory (MB): peak = 957.621 ; gain = 0.000
+set_property top sigma2_tb [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'Y:/H2020/INF3500/TP3/Lab3/Lab2.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'sigma2_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'Y:/H2020/INF3500/TP3/Lab3/Lab2.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj sigma2_tb_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sources_1/new/sigma2.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'sigma2'
+INFO: [VRFC 10-163] Analyzing VHDL file "Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/SIGMA2_MODULE_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'sigma2_tb'
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'Y:/H2020/INF3500/TP3/Lab3/Lab2.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.3
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: C:/Logiciels/Xilinx/Vivado/2018.3/bin/unwrapped/win64.o/xelab.exe -wto cdd04550e6f94f19b54b6863c20996ed --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot sigma2_tb_behav xil_defaultlib.sigma2_tb -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling architecture behavioral of entity xil_defaultlib.sigma2 [sigma2_default]
+Compiling architecture sigma2_tb of entity xil_defaultlib.sigma2_tb
+Built simulation snapshot sigma2_tb_behav
+
+****** Webtalk v2018.3 (64-bit)
+  **** SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+  **** IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source Y:/H2020/INF3500/TP3/Lab3/Lab2.sim/sim_1/behav/xsim/xsim.dir/sigma2_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Thu Feb  6 17:21:39 2020...
+INFO: [USF-XSim-69] 'elaborate' step finished in '4' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'Y:/H2020/INF3500/TP3/Lab3/Lab2.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "sigma2_tb_behav -key {Behavioral:sim_1:Functional:sigma2_tb} -tclbatch {sigma2_tb.tcl} -view {{Y:/H2020/INF3500/TP2/Fichiers a tranferer/pipeline_tb_behav.wcfg}} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2018.3
+Time resolution is 1 ps
+open_wave_config {Y:/H2020/INF3500/TP2/Fichiers a tranferer/pipeline_tb_behav.wcfg}
+WARNING: Simulation object /pipeline_tb/switches was not found in the design.
+WARNING: Simulation object /pipeline_tb/leds was not found in the design.
+WARNING: Simulation object /pipeline_tb/INPUTS was not found in the design.
+WARNING: Simulation object /pipeline_tb/OUTPUTS was not found in the design.
+source sigma2_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+Error: Simulation successful
+Time: 640 ns  Iteration: 0  Process: /sigma2_tb/line__165  File: Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/SIGMA2_MODULE_tb.vhd
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'sigma2_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:09 . Memory (MB): peak = 957.621 ; gain = 0.000
+update_compile_order -fileset sim_1
+set_property top sigma3_tb [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'Y:/H2020/INF3500/TP3/Lab3/Lab2.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'sigma3_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'Y:/H2020/INF3500/TP3/Lab3/Lab2.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj sigma3_tb_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sources_1/new/sigma3.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'sigma3'
+INFO: [VRFC 10-163] Analyzing VHDL file "Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/SIGMA3_MODULE_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'sigma3_tb'
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'Y:/H2020/INF3500/TP3/Lab3/Lab2.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.3
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: C:/Logiciels/Xilinx/Vivado/2018.3/bin/unwrapped/win64.o/xelab.exe -wto cdd04550e6f94f19b54b6863c20996ed --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot sigma3_tb_behav xil_defaultlib.sigma3_tb -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling architecture behavioral of entity xil_defaultlib.sigma3 [sigma3_default]
+Compiling architecture sigma3_tb of entity xil_defaultlib.sigma3_tb
+Built simulation snapshot sigma3_tb_behav
+
+****** Webtalk v2018.3 (64-bit)
+  **** SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+  **** IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source Y:/H2020/INF3500/TP3/Lab3/Lab2.sim/sim_1/behav/xsim/xsim.dir/sigma3_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Thu Feb  6 17:21:59 2020...
+INFO: [USF-XSim-69] 'elaborate' step finished in '4' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'Y:/H2020/INF3500/TP3/Lab3/Lab2.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "sigma3_tb_behav -key {Behavioral:sim_1:Functional:sigma3_tb} -tclbatch {sigma3_tb.tcl} -view {{Y:/H2020/INF3500/TP2/Fichiers a tranferer/pipeline_tb_behav.wcfg}} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2018.3
+Time resolution is 1 ps
+open_wave_config {Y:/H2020/INF3500/TP2/Fichiers a tranferer/pipeline_tb_behav.wcfg}
+WARNING: Simulation object /pipeline_tb/switches was not found in the design.
+WARNING: Simulation object /pipeline_tb/leds was not found in the design.
+WARNING: Simulation object /pipeline_tb/INPUTS was not found in the design.
+WARNING: Simulation object /pipeline_tb/OUTPUTS was not found in the design.
+source sigma3_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+Error: Simulation successful
+Time: 640 ns  Iteration: 0  Process: /sigma3_tb/line__164  File: Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/SIGMA3_MODULE_tb.vhd
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'sigma3_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:09 . Memory (MB): peak = 957.621 ; gain = 0.000
+update_compile_order -fileset sim_1
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+current_sim simulation_6
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+current_sim simulation_5
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+current_sim simulation_4
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+current_sim simulation_3
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+exit
+INFO: [Common 17-206] Exiting Vivado at Thu Feb  6 17:27:58 2020...

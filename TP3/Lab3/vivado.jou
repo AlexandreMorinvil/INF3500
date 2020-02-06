@@ -1,0 +1,175 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Thu Feb  6 14:34:26 2020
+# Process ID: 107652
+# Current directory: Y:/H2020/INF3500/TP3/Lab3
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent109136 Y:\H2020\INF3500\TP3\Lab3\Lab2.xpr
+# Log file: Y:/H2020/INF3500/TP3/Lab3/vivado.log
+# Journal file: Y:/H2020/INF3500/TP3/Lab3\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project Y:/H2020/INF3500/TP3/Lab3/Lab2.xpr
+update_compile_order -fileset sources_1
+file mkdir Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+close [ open Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/CH_MODULE_tb.v w ]
+add_files -fileset sim_1 Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/CH_MODULE_tb.v
+update_compile_order -fileset sim_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top CH_MODULE_tb [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sim_1
+set_property file_type VHDL [get_files  Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/CH_MODULE_tb.v]
+update_compile_order -fileset sim_1
+export_ip_user_files -of_objects  [get_files Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/CH_MODULE_tb.v] -no_script -reset -force -quiet
+remove_files  -fileset sim_1 Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/CH_MODULE_tb.v
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+close [ open Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/CH_MODULE_tb.vhd w ]
+add_files -fileset sim_1 Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/CH_MODULE_tb.vhd
+update_compile_order -fileset sim_1
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+import_files -fileset sim_1 -norecurse Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/CH_MODULE_tb.vhd
+update_files -from_files Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/CH_MODULE_tb.vhd -to_files Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/imports/new/CH_MODULE_tb.vhd -filesets [get_filesets *]
+update_compile_order -fileset sim_1
+update_compile_order -fileset sim_1
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+close [ open Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/ch_tb.vhd w ]
+add_files -fileset sim_1 Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/ch_tb.vhd
+update_compile_order -fileset sim_1
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+import_files -fileset sim_1 -force -norecurse Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/CH_MODULE_tb.vhd
+update_compile_order -fileset sim_1
+update_compile_order -fileset sim_1
+export_ip_user_files -of_objects  [get_files Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sources_1/imports/labo2-circuits-combinatoires/top-tb.vhd] -no_script -reset -force -quiet
+remove_files  Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sources_1/imports/labo2-circuits-combinatoires/top-tb.vhd
+update_compile_order -fileset sim_1
+export_ip_user_files -of_objects  [get_files Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/imports/new/CH_MODULE_tb.vhd] -no_script -reset -force -quiet
+remove_files  -fileset sim_1 Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/imports/new/CH_MODULE_tb.vhd
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+import_files -fileset sim_1 -force -norecurse Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/CH_MODULE_tb.vhd
+update_compile_order -fileset sim_1
+export_ip_user_files -of_objects  [get_files Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/ch_tb.vhd] -no_script -reset -force -quiet
+remove_files  -fileset sim_1 Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/ch_tb.vhd
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+close [ open Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/MAJ_MODULE_tb.v w ]
+add_files -fileset sim_1 Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/MAJ_MODULE_tb.v
+update_compile_order -fileset sim_1
+export_ip_user_files -of_objects  [get_files Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/MAJ_MODULE_tb.v] -no_script -reset -force -quiet
+remove_files  -fileset sim_1 Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/MAJ_MODULE_tb.v
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+close [ open Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/MAJ_MODULE_tb.vhd w ]
+add_files -fileset sim_1 Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/MAJ_MODULE_tb.vhd
+update_compile_order -fileset sim_1
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+close [ open Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/SIGMA0_MODULE_tb.vhd w ]
+add_files -fileset sim_1 Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/SIGMA0_MODULE_tb.vhd
+update_compile_order -fileset sim_1
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+close [ open Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/SIGMA1_MODULE_tb.vhd w ]
+add_files -fileset sim_1 Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/SIGMA1_MODULE_tb.vhd
+update_compile_order -fileset sim_1
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+close [ open Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/SIGMA2_MODULE_tb.vhd w ]
+add_files -fileset sim_1 Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/SIGMA2_MODULE_tb.vhd
+update_compile_order -fileset sim_1
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+close [ open Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/SIGMA3_MODULE_tb.vhd w ]
+add_files -fileset sim_1 Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sim_1/new/SIGMA3_MODULE_tb.vhd
+update_compile_order -fileset sim_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top ch_tb [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sim_1
+launch_simulation
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top ch [current_fileset]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sources_1
+launch_simulation
+launch_simulation
+launch_simulation
+launch_simulation
+launch_simulation
+launch_simulation
+export_ip_user_files -of_objects  [get_files Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sources_1/imports/labo2-circuits-combinatoires/top.vhd] -no_script -reset -force -quiet
+remove_files  Y:/H2020/INF3500/TP3/Lab3/Lab2.srcs/sources_1/imports/labo2-circuits-combinatoires/top.vhd
+launch_simulation
+launch_simulation
+launch_simulation
+open_wave_config {Y:/H2020/INF3500/TP2/Fichiers a tranferer/pipeline_tb_behav.wcfg}
+source ch_tb.tcl
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top maj_tb [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sim_1
+launch_simulation
+open_wave_config {Y:/H2020/INF3500/TP2/Fichiers a tranferer/pipeline_tb_behav.wcfg}
+source maj_tb.tcl
+close_sim
+launch_simulation
+open_wave_config {Y:/H2020/INF3500/TP2/Fichiers a tranferer/pipeline_tb_behav.wcfg}
+source maj_tb.tcl
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top sigma0_tb [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+launch_simulation
+update_compile_order -fileset sim_1
+launch_simulation
+open_wave_config {Y:/H2020/INF3500/TP2/Fichiers a tranferer/pipeline_tb_behav.wcfg}
+source sigma0_tb.tcl
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top sigma1_tb [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sim_1
+launch_simulation
+open_wave_config {Y:/H2020/INF3500/TP2/Fichiers a tranferer/pipeline_tb_behav.wcfg}
+source sigma1_tb.tcl
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top sigma2_tb [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+launch_simulation
+open_wave_config {Y:/H2020/INF3500/TP2/Fichiers a tranferer/pipeline_tb_behav.wcfg}
+source sigma2_tb.tcl
+update_compile_order -fileset sim_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top sigma3_tb [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+launch_simulation
+open_wave_config {Y:/H2020/INF3500/TP2/Fichiers a tranferer/pipeline_tb_behav.wcfg}
+source sigma3_tb.tcl
+update_compile_order -fileset sim_1
+close_sim
+current_sim simulation_6
+close_sim
+current_sim simulation_5
+close_sim
+current_sim simulation_4
+close_sim
+current_sim simulation_3
+close_sim
+close_sim

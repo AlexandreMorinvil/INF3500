@@ -1,0 +1,13 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../Lab2.srcs/sources_1/imports/new/ch.vhd" \
+"../../../../Lab2.srcs/sources_1/new/maj.vhd" \
+"../../../../Lab2.srcs/sources_1/new/sigma0.vhd" \
+"../../../../Lab2.srcs/sources_1/new/sigma1.vhd" \
+"../../../../Lab2.srcs/sources_1/new/sigma2.vhd" \
+"../../../../Lab2.srcs/sources_1/new/sigma3.vhd" \
+"../../../../Lab2.srcs/sources_1/imports/labo2-circuits-combinatoires/top.vhd" \
+"../../../../Lab2.srcs/sources_1/imports/labo2-circuits-combinatoires/top-tb.vhd" \
+
+# Do not sort compile order
+nosort
