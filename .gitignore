@@ -29,3 +29,19 @@ TP3/Lab3/Lab2.sim/
 *.rlx
 
 *.str
+
+*.tcl
+
+*.mem
+
+*.reloc
+
+*.rtti
+
+*.type
+
+*.xdbg
+
+*.exe
+
+*.wdm
