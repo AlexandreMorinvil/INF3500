@@ -1,6 +1,0 @@
-INFO: [VRFC 10-163] Analyzing VHDL file "Y:/H2020/INF3500/TP2/Lab2/Lab2.srcs/sources_1/imports/new/ch.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'ch'
-INFO: [VRFC 10-163] Analyzing VHDL file "Y:/H2020/INF3500/TP2/Lab2/Lab2.srcs/sources_1/imports/labo2-circuits-combinatoires/top.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'top'
-INFO: [VRFC 10-163] Analyzing VHDL file "Y:/H2020/INF3500/TP2/Lab2/Lab2.srcs/sources_1/imports/labo2-circuits-combinatoires/top-tb.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'pipeline_tb'

@@ -1,4 +1,0 @@
-INFO: [VRFC 10-163] Analyzing VHDL file "Y:/H2020/INF3500/Lab1/Lab1.srcs/sources_1/imports/INF3500/ch.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'choose_function'
-INFO: [VRFC 10-163] Analyzing VHDL file "Y:/H2020/INF3500/Lab1/Lab1.srcs/sources_1/imports/INF3500/ch_tb.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'choose_function_tb'
