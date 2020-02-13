@@ -19,7 +19,7 @@ architecture Behavioral of sigma3 is
 signal T1, T2, T3 : std_logic_vector(31 downto 0);
 begin
 	o <= T1 xor T2 xor T3;
-	T1 <= std_logic_vector(rotate_right(unsigned(X),6));
+	T1 <= std_logic_vector(rotate_right(unsigned(X),17));
 	T2 <= std_logic_vector(rotate_right(unsigned(X),19));
 	T3 <= std_logic_vector(shift_right(unsigned(X),10));
 end Behavioral;
