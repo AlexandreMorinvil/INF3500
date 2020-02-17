@@ -43,7 +43,7 @@ int main()
 
 	// INPUT Generation
 	// Input of  ch function
-	// INPUT : Edge cases (CH funciton)
+	// INPUT : Edge cases (CH function)
 	inCh[0][0] = 0;
 	inCh[0][1] = valMax;
 	inCh[0][2] = 0;
@@ -74,7 +74,7 @@ int main()
 	{
 		for (unsigned int i = 8; i < 64; ++i)
 		{
-			inCh[j][i] = ((RAND_MAX * rand() + rand()) % (valMax - 1)) + 1; //on génère entre 1 et 2^32-2 inclus
+			inCh[j][i] = ((RAND_MAX * rand() + rand()) % (valMax+1)); //on génère entre 0 et 2^32-1 inclus
 		}
 	}
 	for (unsigned int i = 0; i < 64; ++i)
@@ -82,7 +82,7 @@ int main()
 		outCh[i] = ch(inCh[0][i], inCh[1][i], inCh[2][i]);
 	}
 
-	// INPUT : Edge cases (MAJ funciton)
+	// INPUT : Edge cases (MAJ function)
 	inMaj[0][0] = 0;
 	inMaj[0][1] = valMax;
 	inMaj[0][2] = 0;
@@ -112,7 +112,7 @@ int main()
 	{
 		for (unsigned int i = 8; i < 64; ++i)
 		{
-			inMaj[j][i] = ((RAND_MAX * rand() + rand()) % (valMax - 1)) + 1; //on génère entre 1 et 2^32-2 inclus
+			inMaj[j][i] = ((RAND_MAX * rand() + rand()) % (valMax+1)); //on génère entre 1 et 2^32-1 inclus
 		}
 	}
 	for (unsigned int i = 0; i < 64; ++i)
