@@ -37,9 +37,13 @@ u32 outSigma3[64];
 int main()
 {
 
+	// Initialization
 	srand(time(NULL));
 	FILE* file;
 
+	// INPUT Generation
+	// Input of  ch function
+	// INPUT : Edge cases (CH funciton)
 	inCh[0][0] = 0;
 	inCh[0][1] = valMax;
 	inCh[0][2] = 0;
@@ -64,6 +68,8 @@ int main()
 	inCh[2][5] = valMax;
 	inCh[2][6] = valMax;
 	inCh[2][7] = valMax;
+
+	// INPUT : Random values
 	for (unsigned int j = 0; j < 3; j++)
 	{
 		for (unsigned int i = 8; i < 64; ++i)
@@ -76,6 +82,7 @@ int main()
 		outCh[i] = ch(inCh[0][i], inCh[1][i], inCh[2][i]);
 	}
 
+	// INPUT : Edge cases (MAJ funciton)
 	inMaj[0][0] = 0;
 	inMaj[0][1] = valMax;
 	inMaj[0][2] = 0;
@@ -100,6 +107,7 @@ int main()
 	inMaj[2][5] = valMax;
 	inMaj[2][6] = valMax;
 	inMaj[2][7] = valMax;
+
 	for (unsigned int j = 0; j < 3; j++)
 	{
 		for (unsigned int i = 8; i < 64; ++i)
@@ -112,6 +120,7 @@ int main()
 		outMaj[i] = maj(inMaj[0][i], inMaj[1][i], inMaj[2][i]);
 	}
 
+	// INPUT : sigma0 function
 	inSigma0[0] = 0;
 	inSigma0[1] = valMax;
 	for (unsigned int i = 2; i < 64; ++i)
@@ -122,6 +131,8 @@ int main()
 	{
 		outSigma0[i] = sigma0(inSigma0[i]);
 	}
+	
+	// INPUT : sigma1 function
 	inSigma1[0] = 0;
 	inSigma1[1] = valMax;
 	for (unsigned int i = 2; i < 64; ++i)
@@ -132,6 +143,8 @@ int main()
 	{
 		outSigma1[i] = sigma1(inSigma1[i]);
 	}
+	
+	// INPUT : sigma2 function
 	inSigma2[0] = 0;
 	inSigma2[1] = valMax;
 	for (unsigned int i = 2; i < 64; ++i)
@@ -142,6 +155,8 @@ int main()
 	{
 		outSigma2[i] = sigma2(inSigma2[i]);
 	}
+	
+	// INPUT : sigma3 function
 	inSigma3[0] = 0;
 	inSigma3[1] = valMax;
 	for (unsigned int i = 2; i < 64; ++i)
@@ -153,6 +168,8 @@ int main()
 		outSigma3[i] = sigma3(inSigma3[i]);
 	}
 
+	// === Writting into the files ===
+	// ch.txt file
 	remove("ch.txt");
 	fopen_s(&file, "ch.txt", "w");
 
@@ -176,6 +193,7 @@ int main()
 
 	fclose(file);
 
+	// maj.txt file
 	remove("maj.txt");
 	fopen_s(&file, "maj.txt", "w");
 
@@ -199,6 +217,7 @@ int main()
 
 	fclose(file);
 
+	// sigma0.txt file
 	remove("sigma0.txt");
 	fopen_s(&file, "sigma0.txt", "w");
 
@@ -217,6 +236,8 @@ int main()
 	fprintf(file, "\tx\"%08x\"\n\t);\n\n", outSigma0[63]);
 
 	fclose(file);
+
+	// sigma1.txt file
 	remove("sigma1.txt");
 	fopen_s(&file, "sigma1.txt", "w");
 
@@ -236,6 +257,7 @@ int main()
 
 	fclose(file);
 
+	// sigma2.txt file
 	remove("sigma2.txt");
 	fopen_s(&file, "sigma2.txt", "w");
 
@@ -255,6 +277,7 @@ int main()
 
 	fclose(file);
 
+	// sigma3.txt file
 	remove("sigma3.txt");
 	fopen_s(&file, "sigma3.txt", "w");
 
@@ -277,6 +300,8 @@ int main()
 	fclose(file);
 }
 
+
+// Functions for which we generate test vector
 u32 ch(u32 x, u32 y, u32 z)
 {
 	return (x&y) ^ ((~x)&z);
