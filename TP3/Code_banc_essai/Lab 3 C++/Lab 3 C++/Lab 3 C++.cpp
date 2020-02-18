@@ -34,7 +34,7 @@ u32 outSigma2[64];
 u32 inSigma3[64];
 u32 outSigma3[64];
 
-int main()
+int maino()
 {
 
 	// Initialization
