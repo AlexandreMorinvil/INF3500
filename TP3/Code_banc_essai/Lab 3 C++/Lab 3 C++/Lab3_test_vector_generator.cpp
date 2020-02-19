@@ -165,7 +165,7 @@ void ecrireFichier(const char* nomFichier, ListeVecteurs entrees, ListeVecteurs 
 	for (unsigned int i = 0; i < entrees.size(); i++)
 	{
 		fprintf(file, "constant INPUTS%s : vector32_t(0 to 63) := (\n", 
-			(entrees.size() > 0) ? ("_" + std::to_string(i)).c_str() : "");
+			(entrees.size() > 1) ? ("_" + std::to_string(i+1)).c_str() : "");
 		for (unsigned int j = 0; j < NOMBRE_VALEURS - 1; j++)
 		{
 			fprintf(file, "\tx\"%08x\",\n", entrees[i][j]);
@@ -177,7 +177,7 @@ void ecrireFichier(const char* nomFichier, ListeVecteurs entrees, ListeVecteurs 
 	for (unsigned int i = 0; i < sorties.size(); i++)
 	{
 		fprintf(file, "constant OUTPUTS%s : vector32_t(0 to 63) := (\n",
-			(sorties.size() > 0) ? ("_" + std::to_string(i)).c_str() : "");
+			(sorties.size() > 1) ? ("_" + std::to_string(i+1)).c_str() : "");
 		for (unsigned int j = 0; j < 63; j++)
 		{
 			fprintf(file, "\tx\"%08x\",\n", sorties[i][j]);
