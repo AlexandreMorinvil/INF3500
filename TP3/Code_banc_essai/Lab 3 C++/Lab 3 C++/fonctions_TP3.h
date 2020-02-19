@@ -2,7 +2,8 @@
  Titre	: fonctions_TP3.h : Fonctions pour lesquelles on génère des vecteurs de
 							test dans le TP3 du cours INF3500
  Date   : 2020-02-18
- Auteur : Alexandre Morinvil, Nicholas Valenchon
+ Auteur : 1897222 Alexandre Morinvil 
+		  2032097 Nicholas Valenchon
  License: MIT
 
  Copyright © <Alexandre Morinvil>

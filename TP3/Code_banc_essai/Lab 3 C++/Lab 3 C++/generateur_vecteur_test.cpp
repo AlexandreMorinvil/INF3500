@@ -1,7 +1,8 @@
 /********************************************************************************
  Titre	: generateur_vecteur_test.h : Générateur de vecteurs de test généralisé
  Date   : 2020-02-18
- Auteur : Alexandre Morinvil, Nicholas Valenchon
+ Auteur : 1897222 Alexandre Morinvil
+		  2032097 Nicholas Valenchon
  License: MIT
 
  Copyright © <Alexandre Morinvil>
