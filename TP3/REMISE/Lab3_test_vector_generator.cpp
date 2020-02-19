@@ -13,24 +13,24 @@
 #define NOMBRE_VALEURS 64
 #define MAXIMUM_32BITS 0xFFFFFFFF
 
-// Définition de type
+// Dï¿½finition de type
 typedef uint32_t u32;
 typedef std::vector<std::vector<u32>> ListeVecteurs;
 
 // Initialisation
 void initialisationGenerateurNombresAleatoires();
 
-// Génération des entrées
+// Gï¿½nï¿½ration des entrï¿½es
 u32 genererValeurAleatoire();
 std::vector<u32> genererVecteurAleatoire(unsigned nValeurs);
 ListeVecteurs genererListeValeursAleatoires(unsigned nEntrees, unsigned nValeurs);
 ListeVecteurs genererListeCasLimitesDeBase(unsigned nEntrees);
 ListeVecteurs genererListeEntrees32bits(unsigned nEntrees, unsigned nValeurs);
 
-// Génération de sorties
+// Gï¿½nï¿½ration de sorties
 ListeVecteurs genererListeSorties(std::vector<u32>(*fonction)(std::vector<u32>), ListeVecteurs listeEntrees);
 
-// Écriture du fichier de sortie
+// ï¿½criture du fichier de sortie
 void ecrireFichier(const char* nomFichier, ListeVecteurs entrees, ListeVecteurs sorties);
 
 int main()
@@ -38,11 +38,11 @@ int main()
 	// Initialization
 	initialisationGenerateurNombresAleatoires();
 
-	// Génération des entrées
+	// Gï¿½nï¿½ration des entrï¿½es
 	ListeVecteurs liste3Entrees = genererListeEntrees32bits(3, NOMBRE_VALEURS);
 	ListeVecteurs liste1Entree  = genererListeEntrees32bits(1, NOMBRE_VALEURS);
 
-	// Génération des sorties
+	// Gï¿½nï¿½ration des sorties
 	ListeVecteurs sortiesCh = genererListeSorties(ch, liste3Entrees);
 	ListeVecteurs sortiesMaj = genererListeSorties(maj, liste3Entrees);
 	ListeVecteurs sortiesSigma0 = genererListeSorties(sigma0, liste1Entree);
@@ -50,13 +50,13 @@ int main()
 	ListeVecteurs sortiesSigma2 = genererListeSorties(sigma2, liste1Entree);
 	ListeVecteurs sortiesSigma3 = genererListeSorties(sigma3, liste1Entree);
 
-	// Écriture des fichiers de sortie
+	// ï¿½criture des fichiers de sortie
 	ecrireFichier("ch.txt", liste3Entrees, sortiesCh);
 	ecrireFichier("maj.txt", liste3Entrees, sortiesMaj);
 	ecrireFichier("sigma0.txt", liste1Entree, sortiesSigma0);
-	ecrireFichier("sigma1.txt", liste1Entree, sortiesSigma0);
-	ecrireFichier("sigma2.txt", liste1Entree, sortiesSigma0);
-	ecrireFichier("sigma3.txt", liste1Entree, sortiesSigma0);
+	ecrireFichier("sigma1.txt", liste1Entree, sortiesSigma1);
+	ecrireFichier("sigma2.txt", liste1Entree, sortiesSigma2);
+	ecrireFichier("sigma3.txt", liste1Entree, sortiesSigma3);
 }
 
 void initialisationGenerateurNombresAleatoires()
@@ -115,7 +115,7 @@ ListeVecteurs genererListeEntrees32bits(unsigned nEntrees, unsigned nValeurs)
 	ListeVecteurs listeCasLimites = genererListeCasLimitesDeBase(nEntrees);
 	valeursRestantes -= unsigned(listeCasLimites[0].size());
 
-	// Valeurs aléatoires
+	// Valeurs alï¿½atoires
 	ListeVecteurs listeValeursAleatoires = genererListeValeursAleatoires(nEntrees, valeursRestantes);
 
 	// Mise en commun
@@ -161,7 +161,7 @@ void ecrireFichier(const char* nomFichier, ListeVecteurs entrees, ListeVecteurs 
 	if (file == nullptr)
 		exit(1);
 
-	// Affichage de l'entrée
+	// Affichage de l'entrï¿½e
 	for (unsigned int i = 0; i < entrees.size(); i++)
 	{
 		fprintf(file, "constant INPUTS%s : vector32_t(0 to 63) := (\n", 
@@ -185,6 +185,6 @@ void ecrireFichier(const char* nomFichier, ListeVecteurs entrees, ListeVecteurs 
 		fprintf(file, "\tx\"%08x\"\n\t);\n\n", sorties[i][NOMBRE_VALEURS - 1]);
 	}
 
-	// Désalocation de l'espace mémoire
+	// Dï¿½salocation de l'espace mï¿½moire
 	fclose(file);
 }

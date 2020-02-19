@@ -152,7 +152,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Lab 3 C++.cpp" />
-    <ClCompile Include="Lab3_test_vector_generator.cpp" />
+    <ClCompile Include="generateur_vecteur_test.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="fonctions_TP3.h" />
