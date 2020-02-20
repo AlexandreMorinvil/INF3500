@@ -1,0 +1,11 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../project_tp4.srcs/sources_1/imports/labo4-circuits-sequentiels/debouncer.vhd" \
+"../../../../project_tp4.srcs/sources_1/imports/labo4-circuits-sequentiels/functions-sha256-pkg.vhd" \
+"../../../../project_tp4.srcs/sources_1/imports/labo4-circuits-sequentiels/pulse.vhd" \
+"../../../../project_tp4.srcs/sources_1/imports/labo4-circuits-sequentiels/sha256.vhd" \
+"../../../../project_tp4.srcs/sources_1/imports/labo4-circuits-sequentiels/sha256-top.vhd" \
+"../../../../project_tp4.srcs/sources_1/imports/labo4-circuits-sequentiels/sha256-tb.vhd" \
+
+# Do not sort compile order
+nosort
