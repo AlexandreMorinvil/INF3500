@@ -1,5 +1,5 @@
 -------------------------------------------------------------------------------
---      INF3500 - Conception et r�alisation de syst�mes num�riques
+--      INF3500 - Conception et rï¿½alisation de systï¿½mes numï¿½riques
 --      Laboratoire #4
 --      By Olivier Dion and Milan Lachance
 --      Date: 03-04-2019
@@ -17,7 +17,7 @@ use ieee.std_logic_unsigned.all;
 
 -- Importation des fonctions du SHA-256 utilisant le type 'unsigned'
 --
--- Vous pouvez importer vos propre entit�s et faire des ports maps ..
+-- Vous pouvez importer vos propre entitï¿½s et faire des ports maps ..
 library work;
 use work.functions_sha256_pkg.all;
 
@@ -39,7 +39,7 @@ architecture sha256 of sha256 is
   -- Types
   type vector32_t is array (integer range <>) of std_logic_vector(31 downto 0);
 
-  -- Ajoutez des �tats � votre machine
+  -- Ajoutez des ï¿½tats ï¿½ votre machine
   type state_type is (IDLE, DONE, majW, majT, majVar, majH);
 
   -- Vos signaux ici
@@ -86,64 +86,57 @@ begin
       variable T1, T2 : std_logic_vector(31 downto 0);
       variable a, b, c, d, e, f, g, h : std_logic_vector(31 downto 0);
       variable Hash : vector32_t(0 to 7);
-      variable i : natural range 0 to 63 := 0;
+      variable i : natural range 0 to 64 := 0;
+
+
 
   begin
 
     if (reset = '1') then
       -- Reset me
-      Hash(0) := H_initial(0);
-      Hash(1) := H_initial(1);
-      Hash(2) := H_initial(2);
-      Hash(3) := H_initial(3);
-      Hash(4) := H_initial(4);
-      Hash(5) := H_initial(5);
-      Hash(6) := H_initial(6);
-      Hash(7) := H_initial(7);
       state <= IDLE;
       -- autre reset
-      -- W <= (else => '0');
+      --W <= (else => '0');
     elsif (rising_edge(clk)) then
 
       case state is
 
         -- Wait for new inputs
         when IDLE =>
-          i := 0;   
+          i := 0;
+          a := H_initial(0);
+          b := H_initial(1);
+          c := H_initial(2);
+          d := H_initial(3);
+          e := H_initial(4);
+          f := H_initial(5);
+          g := H_initial(6);
+          h := H_initial(7);
           output_valid <= '0';
-          a := Hash(0);
-          b := Hash(1);
-          c := Hash(2);
-          d := Hash(3);
-          e := Hash(4);
-          f := Hash(5);
-          g := Hash(6);
-          h := Hash(7);
-          state <= majW;
       
         when majW =>
           if i < 16 then
-            W(i) := input(((i+1)*32 -1) downto (i*32));
+            W(i) := input(i*32 to (i+1)*32 -1);
           else
             W(i) := std_logic_vector(sigma3(unsigned(W(i-2)))) + W(i-7) + std_logic_vector(sigma2(unsigned(W(i-15)))) + W(i - 16);
           end if;
           state <= majT;
 
         when majT =>
-          T1 := h + std_logic_vector(sigma1(unsigned(e))) + std_logic_vector(ch(unsigned(e),unsigned(f),unsigned(g))) + K(i) + W(i);
-          T2 := std_logic_vector(sigma0(unsigned(a))) + std_logic_vector(maj(unsigned(a),unsigned(b),unsigned(c)));
-          i := i + 1;
+          T1:=h + std_logic_vector(sigma1(unsigned(e))) + std_logic_vector(ch(unsigned(e),unsigned(f),unsigned(g))) + K(i) + W(i);
+          T2:=std_logic_vector(sigma0(unsigned(a))) + std_logic_vector(maj(unsigned(a),unsigned(b),unsigned(c)));
+          i:=i + 1;
           state <= majVar;
 
         when majVar =>
-          h := g;
-          g := f;
-          f := e;
-          e := d + T1;
-          d := c;
-          c := b;
-          b := a;
-          a := T1 + T2;
+          h:=g;
+          g:=f;
+          f:=e;
+          e:= d + T1;
+          d:=c;
+          c:=b;
+          b:=a;
+          a:=T1 + T2;
           if i < 64 then
             state <= majW;
           else
@@ -161,6 +154,7 @@ begin
             Hash(7) := Hash(7) + h;
             state <= DONE;
 
+
         -- Wait until new_input is set to 0 to avoid hashing 2 times
         -- the same blob
         when DONE =>
@@ -176,9 +170,11 @@ begin
           state <= IDLE;
           -- erreur
 
+
       end case;
 
     end if;
 
   end process;
+  output <= X"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff";
 end sha256;
