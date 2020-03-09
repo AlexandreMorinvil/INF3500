@@ -86,7 +86,7 @@ begin
       variable T1, T2 : std_logic_vector(31 downto 0);
       variable a, b, c, d, e, f, g, h : std_logic_vector(31 downto 0);
       variable Hash : vector32_t(0 to 7);
-      variable i : natural range 0 to 63 := 0;
+      variable i : natural range 0 to 64 := 0; -- i doit aller jusqu'au depassement de la valeur pour sortir de la boucle, donc meme si les valeurs qui nous interessent sont entre 0 et 63, quand i sera egal à 64 alors on passera à l'état suivant
 
   begin
 
@@ -101,8 +101,6 @@ begin
       Hash(6) := H_initial(6);
       Hash(7) := H_initial(7);
       state <= IDLE;
-      -- autre reset
-      -- W <= (else => '0');
     elsif (rising_edge(clk)) then
 
       case state is
@@ -123,7 +121,7 @@ begin
       
         when majW =>
           if i < 16 then
-            W(i) := input(((i+1)*32 -1) downto (i*32));
+            W(i) := input(((16-i)*32 -1) downto ((15-i)*32));
           else
             W(i) := std_logic_vector(sigma3(unsigned(W(i-2)))) + W(i-7) + std_logic_vector(sigma2(unsigned(W(i-15)))) + W(i - 16);
           end if;
