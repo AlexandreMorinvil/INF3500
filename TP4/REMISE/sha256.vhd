@@ -85,7 +85,7 @@ begin
       variable W : vector32_t(0 to 63);
       variable T1, T2 : std_logic_vector(31 downto 0);
       variable a, b, c, d, e, f, g, h : std_logic_vector(31 downto 0);
-      variable Hash : vector32_t(0 to 7) := H_initial;
+      variable Hash : vector32_t(0 to 7);
       variable i : natural range 0 to 64 := 0; -- i doit aller jusqu'au depassement de la valeur pour sortir de la boucle, donc meme si les valeurs qui nous interessent sont entre 0 et 63, quand i sera egal à 64 alors on passera à l'état suivant
 
   begin
@@ -116,9 +116,8 @@ begin
 
         -- Wait for new inputs
         when IDLE =>
-            i := 0;
-            output_valid <= '0';
-            if (new_input = '1') then
+           if(new_input = '1') then
+              output_valid <= '0';
               a := Hash(0);
               b := Hash(1);
               c := Hash(2);
@@ -127,10 +126,10 @@ begin
               f := Hash(5);
               g := Hash(6);
               h := Hash(7);
-             end if;
+            end if;
+            i := 0;
+            state <= majW;
 
-          state <= majW;
-      
         when majW =>
           if i < 16 then
             W(i) := input(511-i*32 downto 512-(i+1)*32);
