@@ -5,8 +5,8 @@
 --      Date: 03-04-2019
 --      Version: 1
 --
---      Modified:  [DATE]
---      By: [NOMS] [MATRICULE]
+--      Modified:  11-03-2020
+--      By: Alexandre Morinvil - 1897222 & Nicolas Valenchon - 2032097
 -------------------------------------------------------------------------------
 
 
