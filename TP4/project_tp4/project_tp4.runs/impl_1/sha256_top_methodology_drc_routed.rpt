@@ -1,8 +1,8 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-| Date         : Wed Mar 11 15:02:22 2020
-| Host         : L3714-20 running 64-bit major release  (build 9200)
+| Date         : Wed Mar 11 16:13:34 2020
+| Host         : L3714-15 running 64-bit major release  (build 9200)
 | Command      : report_methodology -file sha256_top_methodology_drc_routed.rpt -pb sha256_top_methodology_drc_routed.pb -rpx sha256_top_methodology_drc_routed.rpx
 | Design       : sha256_top
 | Device       : xc7a100tcsg324-1

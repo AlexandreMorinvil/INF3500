@@ -1,8 +1,8 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-| Date             : Wed Mar 11 15:02:22 2020
-| Host             : L3714-20 running 64-bit major release  (build 9200)
+| Date             : Wed Mar 11 16:13:34 2020
+| Host             : L3714-15 running 64-bit major release  (build 9200)
 | Command          : report_power -file sha256_top_power_routed.rpt -pb sha256_top_power_summary_routed.pb -rpx sha256_top_power_routed.rpx
 | Design           : sha256_top
 | Device           : xc7a100tcsg324-1
@@ -33,7 +33,7 @@ Table of Contents
 | Total On-Chip Power (W)  | 0.111        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.013        |
+| Dynamic (W)              | 0.014        |
 | Device Static (W)        | 0.097        |
 | Effective TJA (C/W)      | 4.6          |
 | Max Ambient (C)          | 84.5         |
@@ -53,14 +53,14 @@ Table of Contents
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
 | Clocks                   |     0.001 |        3 |       --- |             --- |
-| Slice Logic              |     0.004 |     1980 |       --- |             --- |
-|   LUT as Logic           |     0.003 |      856 |     63400 |            1.35 |
+| Slice Logic              |     0.004 |     1981 |       --- |             --- |
+|   LUT as Logic           |     0.003 |      859 |     63400 |            1.35 |
 |   LUT as Distributed RAM |    <0.001 |      172 |     19000 |            0.91 |
 |   CARRY4                 |    <0.001 |      117 |     15850 |            0.74 |
 |   Register               |    <0.001 |      628 |    126800 |            0.50 |
 |   Others                 |     0.000 |        5 |       --- |             --- |
-| Signals                  |     0.004 |     1369 |       --- |             --- |
-| I/O                      |     0.004 |       36 |       210 |           17.14 |
+| Signals                  |     0.003 |     1360 |       --- |             --- |
+| I/O                      |     0.006 |       36 |       210 |           17.14 |
 | Static Power             |     0.097 |          |           |                 |
 | Total                    |     0.111 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
@@ -72,9 +72,9 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.025 |       0.010 |      0.015 |
+| Vccint    |       1.000 |     0.023 |       0.008 |      0.015 |
 | Vccaux    |       1.800 |     0.018 |       0.000 |      0.018 |
-| Vcco33    |       3.300 |     0.005 |       0.001 |      0.004 |
+| Vcco33    |       3.300 |     0.006 |       0.002 |      0.004 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
@@ -141,8 +141,8 @@ Table of Contents
 +------------+-----------+
 | Name       | Power (W) |
 +------------+-----------+
-| sha256_top |     0.013 |
-|   sha_inst |     0.010 |
+| sha256_top |     0.014 |
+|   sha_inst |     0.008 |
 +------------+-----------+
 
 
