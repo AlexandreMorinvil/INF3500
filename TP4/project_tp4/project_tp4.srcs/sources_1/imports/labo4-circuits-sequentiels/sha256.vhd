@@ -92,6 +92,7 @@ begin
 
     if (reset = '1') then
       -- Reset me
+      output_valid <= '0';
       Hash(0) := H_initial(0);
       Hash(1) := H_initial(1);
       Hash(2) := H_initial(2);
@@ -107,16 +108,18 @@ begin
 
         -- Wait for new inputs
         when IDLE =>
-          i := 0;   
-          output_valid <= '0';
-          a := Hash(0);
-          b := Hash(1);
-          c := Hash(2);
-          d := Hash(3);
-          e := Hash(4);
-          f := Hash(5);
-          g := Hash(6);
-          h := Hash(7);
+          i := 0;
+          --if (new_input = '1') then 
+              output_valid <= '0';
+              a := Hash(0);
+              b := Hash(1);
+              c := Hash(2);
+              d := Hash(3);
+              e := Hash(4);
+              f := Hash(5);
+              g := Hash(6);
+              h := Hash(7);
+          --end if;
           state <= majW;
       
         when majW =>
