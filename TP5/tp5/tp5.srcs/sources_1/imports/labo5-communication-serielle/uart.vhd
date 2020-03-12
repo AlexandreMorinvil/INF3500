@@ -50,7 +50,7 @@ end uart;
 
 architecture uart of uart is
 
-  type uart_rx_fsm is (idle_st, stop_st);
+  type uart_rx_fsm is (idle_st, stop_st,delay_st, data_st);
   type uart_tx_fsm is (idle_st);
 
   signal uart_rx : uart_rx_fsm := idle_st;
@@ -59,6 +59,10 @@ architecture uart of uart is
   signal rx_sdata_reg  : std_logic;
   signal rx_sdata_sync : std_logic;
 
+  signal rx_start_bit : std_logic;
+  signal rx_frame_rst : std_logic;
+  signal clk_rx : std_logic;
+  signal cnt   : integer range 0 to BUS_FREQUENCY/(BAUD_RATE*2) := 0;
 
 begin
 
@@ -70,26 +74,26 @@ begin
       rst     => rst,
       din     => rx_sdata_sync,
       rising  => open,
-      falling => open, -- Connect me
+      falling => rx_start_bit, -- Connect me
       edge    => open
       );
 
   -- RX UART clock generation
   rx_clk_div: entity work.reg_clken
     generic map(
-      CLK_DIV => BUS_FREQUENCY/(BAUD_RATE*2)-- DIVISOR
+      CLK_DIV => BUS_FREQUENCY/(BAUD_RATE)-- DIVISOR
       )
     port map(
       clk       => clk,
       rst       => rx_frame_rst,
       clken_in  => '1',
-      clken_out => open -- Connect me
+      clken_out => clk_rx -- Connect me
       );
 
   -- TX UART clock generation
   tx_clk_div: entity work.reg_clken
     generic map(
-      CLK_DIV => BUS_FREQUENCY/BAUD_RATE-- DIVISOR
+      CLK_DIV => BUS_FREQUENCY/(BAUD_RATE)-- DIVISOR
       )
     port map(
       clk        => clk,
@@ -109,7 +113,7 @@ begin
 
       -- Sync reset
       if rst = '1' then
-        uart_r   <= idle_st;
+        uart_rx   <= idle_st;
         rx_pdata <= (others => '0');
       end if;
 
@@ -120,6 +124,18 @@ begin
       case uart_rx is
 
         when idle_st =>
+            if rx_start_bit = '1' then
+                uart_rx <= delay_st;
+            end if;
+        
+       when delay_st =>
+            if cnt = BUS_FREQUENCY/(BAUD_RATE*2) then
+                rx_frame_rst <= '1';
+                uart_rx <= data_st;
+            else
+                cnt <= cnt + 1;
+            end if;
+            
 
       end case;
 
