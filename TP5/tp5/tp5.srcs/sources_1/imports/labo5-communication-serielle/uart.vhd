@@ -77,7 +77,7 @@ begin
   -- RX UART clock generation
   rx_clk_div: entity work.reg_clken
     generic map(
-      CLK_DIV => -- DIVISOR
+      CLK_DIV => BUS_FREQUENCY/(BAUD_RATE*2)-- DIVISOR
       )
     port map(
       clk       => clk,
@@ -89,7 +89,7 @@ begin
   -- TX UART clock generation
   tx_clk_div: entity work.reg_clken
     generic map(
-      CLK_DIV => -- DIVISOR
+      CLK_DIV => BUS_FREQUENCY/BAUD_RATE-- DIVISOR
       )
     port map(
       clk        => clk,

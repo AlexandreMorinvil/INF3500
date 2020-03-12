@@ -82,7 +82,7 @@ begin
   begin
     if rising_edge(clk) then
       if rst = '1' then
-        for i in range 0 to 7 loop
+        for i in 0 to 7 loop
           msg(i) <= (others => '0');
         end loop;
         if (ok = '1') then
