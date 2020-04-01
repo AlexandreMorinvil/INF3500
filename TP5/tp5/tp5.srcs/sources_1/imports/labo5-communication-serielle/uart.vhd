@@ -51,7 +51,7 @@ end uart;
 architecture uart of uart is
 
   type uart_rx_fsm is (idle_st, stop_st,delay_st, data_st);
-  type uart_tx_fsm is (idle_st);
+  type uart_tx_fsm is (idle_st, send_st);
 
   signal uart_rx : uart_rx_fsm := idle_st;
   signal uart_tx : uart_tx_fsm := idle_st;
@@ -63,8 +63,13 @@ architecture uart of uart is
   signal rx_frame_rst : std_logic;
   signal data_rx : std_logic;
   signal cnt   : integer range 0 to BUS_FREQUENCY/(BAUD_RATE*2) := 0;
-  signal data_cnt : natural range 0 to DATA_WIDTH := 0;
-  signal parity : std_logic := '0';
+  signal data_cnt_rx : natural range 0 to DATA_WIDTH := 0;
+  signal parity_rx : std_logic := '0';
+  
+  
+  signal data_tx : std_logic;
+  signal data_cnt_tx : natural range 0 to DATA_WIDTH+1 := 0;
+  signal parity_tx : std_logic := '0';
 begin
 
   -- Start Bit detector
@@ -100,7 +105,7 @@ begin
       clk        => clk,
       rst        => '0',
       clken_in   => '1',
-      clken_out  => open -- Connect me
+      clken_out  => data_tx -- Connect me
       );
 
   -- Async
@@ -137,17 +142,17 @@ begin
                 cnt <= cnt + 1;
             end if;
        when data_st =>
-            if data_cnt = DATA_WIDTH then
-                if not parity = data_rx then
+            if data_cnt_rx = DATA_WIDTH then
+                if not parity_rx = data_rx then
                     rx_parity_err <= '1';
                 end if;
                 uart_rx <= stop_st;
             else
-                rx_pdata(data_cnt) <= data_rx;
+                rx_pdata(data_cnt_rx) <= data_rx;
                 if data_rx = PARITY_TYPE then
-                    parity <= not parity;
+                    parity_rx <= not parity_rx;
                 end if;
-                data_cnt <= data_cnt +1;
+                data_cnt_rx <= data_cnt_rx +1;
             end if;
         when stop_st =>
             if data_rx = '0' then
@@ -173,8 +178,26 @@ begin
       case uart_tx is
 
         when idle_st =>
-
-      end case;
+            if tx_send_data = '1' then
+                uart_tx <= send_st;
+                tx_sdata <= '0';
+            end if;
+            
+        when send_st =>
+            if data_cnt_tx = DATA_WIDTH then
+                rx_parity_err <= parity_tx;
+            else if data_cnt_tx = DATA_WIDTH +1 then
+                tx_sdata <= '1';
+                uart_tx <= idle_st;
+            else
+                tx_sdata <= tx_pdata(data_cnt_tx);
+                if tx_pdata(data_cnt_tx) = PARITY_TYPE then
+                    parity_tx <= not parity_tx;
+                end if;
+                data_cnt_tx <= data_cnt_tx +1;
+            end if;
+            end if;
+        end case;
     end if;
   end process;
 
