@@ -61,9 +61,10 @@ architecture uart of uart is
 
   signal rx_start_bit : std_logic;
   signal rx_frame_rst : std_logic;
-  signal clk_rx : std_logic;
+  signal data_rx : std_logic;
   signal cnt   : integer range 0 to BUS_FREQUENCY/(BAUD_RATE*2) := 0;
-
+  signal data_cnt : natural range 0 to DATA_WIDTH := 0;
+  signal parity : std_logic := '0';
 begin
 
   -- Start Bit detector
@@ -87,7 +88,7 @@ begin
       clk       => clk,
       rst       => rx_frame_rst,
       clken_in  => '1',
-      clken_out => clk_rx -- Connect me
+      clken_out => data_rx -- Connect me
       );
 
   -- TX UART clock generation
@@ -135,8 +136,24 @@ begin
             else
                 cnt <= cnt + 1;
             end if;
-            
-
+       when data_st =>
+            if data_cnt = DATA_WIDTH then
+                if not parity = data_rx then
+                    rx_parity_err <= '1';
+                end if;
+                uart_rx <= stop_st;
+            else
+                rx_pdata(data_cnt) <= data_rx;
+                if data_rx = PARITY_TYPE then
+                    parity <= not parity;
+                end if;
+                data_cnt <= data_cnt +1;
+            end if;
+        when stop_st =>
+            if data_rx = '0' then
+                rx_frame_err <= '1';
+            end if;
+            uart_rx <= idle_st;
       end case;
 
     end if;
