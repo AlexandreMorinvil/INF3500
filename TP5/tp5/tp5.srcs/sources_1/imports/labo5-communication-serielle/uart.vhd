@@ -61,13 +61,13 @@ architecture uart of uart is
 
   signal rx_start_bit : std_logic;
   signal rx_frame_rst : std_logic;
-  signal data_rx : std_logic;
+  signal clk_rx : std_logic;
   signal cnt   : integer range 0 to BUS_FREQUENCY/(BAUD_RATE*2) := 0;
   signal data_cnt_rx : natural range 0 to DATA_WIDTH := 0;
   signal parity_rx : std_logic := '0';
   
   
-  signal data_tx : std_logic;
+  signal clk_tx : std_logic;
   signal data_cnt_tx : natural range 0 to DATA_WIDTH+1 := 0;
   signal parity_tx : std_logic := '0';
 begin
@@ -93,7 +93,7 @@ begin
       clk       => clk,
       rst       => rx_frame_rst,
       clken_in  => '1',
-      clken_out => data_rx -- Connect me
+      clken_out => clk_rx -- Connect me
       );
 
   -- TX UART clock generation
@@ -105,7 +105,7 @@ begin
       clk        => clk,
       rst        => '0',
       clken_in   => '1',
-      clken_out  => data_tx -- Connect me
+      clken_out  => clk_tx -- Connect me
       );
 
   -- Async
@@ -142,24 +142,31 @@ begin
                 cnt <= cnt + 1;
             end if;
        when data_st =>
-            if data_cnt_rx = DATA_WIDTH then
-                if not parity_rx = data_rx then
-                    rx_parity_err <= '1';
+            if clk_rx = '1' then
+                if data_cnt_rx = DATA_WIDTH then
+                    if not parity_rx = rx_sdata_sync then
+                        rx_parity_err <= '1';
+                    end if;
+                    uart_rx <= stop_st;
+                else
+                    rx_pdata(data_cnt_rx) <= rx_sdata_sync;
+                    if rx_sdata_sync = PARITY_TYPE then
+                        parity_rx <= not parity_rx;
+                    end if;
+                    data_cnt_rx <= data_cnt_rx +1;
                 end if;
-                uart_rx <= stop_st;
-            else
-                rx_pdata(data_cnt_rx) <= data_rx;
-                if data_rx = PARITY_TYPE then
-                    parity_rx <= not parity_rx;
-                end if;
-                data_cnt_rx <= data_cnt_rx +1;
             end if;
+            
         when stop_st =>
-            if data_rx = '0' then
-                rx_frame_err <= '1';
+            if clk_rx = '1' then
+
+                if rx_sdata_sync = '0' then
+                     rx_frame_err <= '1';
+                end if;
+                uart_rx <= idle_st;
             end if;
-            uart_rx <= idle_st;
       end case;
+      
 
     end if;
   end process;
@@ -184,20 +191,22 @@ begin
             end if;
             
         when send_st =>
-            if data_cnt_tx = DATA_WIDTH then
-                rx_parity_err <= parity_tx;
-            else if data_cnt_tx = DATA_WIDTH +1 then
-                tx_sdata <= '1';
-                uart_tx <= idle_st;
-            else
-                tx_sdata <= tx_pdata(data_cnt_tx);
-                if tx_pdata(data_cnt_tx) = PARITY_TYPE then
-                    parity_tx <= not parity_tx;
+            if clk_tx ='1' then
+                if data_cnt_tx = DATA_WIDTH then
+                    rx_parity_err <= parity_tx;
+                else if data_cnt_tx = DATA_WIDTH +1 then
+                    tx_sdata <= '1';
+                    uart_tx <= idle_st;
+                else
+                    tx_sdata <= tx_pdata(data_cnt_tx);
+                    if tx_pdata(data_cnt_tx) = PARITY_TYPE then
+                        parity_tx <= not parity_tx;
+                    end if;
+                    data_cnt_tx <= data_cnt_tx +1;
                 end if;
-                data_cnt_tx <= data_cnt_tx +1;
+                end if;
             end if;
-            end if;
-        end case;
+       end case;
     end if;
   end process;
 

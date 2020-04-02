@@ -30,14 +30,108 @@ use IEEE.STD_LOGIC_1164.ALL;
 -- any Xilinx leaf cells in this code.
 --library UNISIM;
 --use UNISIM.VComponents.all;
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+use ieee.math_real.all;
+use std.textio.all;
 
-entity uart-tb is
---  Port ( );
-end uart-tb;
+entity uart_tb is
+  generic(
+    BUS_FREQUENCY : integer   := 1E8;    -- Usually the same as the clk' frequency
+    BAUD_RATE     : integer   := 57_600; -- See the uart standard baud rate
+    DATA_WIDTH    : integer   := 8;      -- UART Data field width
+    PARITY_EN     : boolean   := true;   -- Enables parity check/generation
+    PARITY_TYPE   : std_logic := '1'     -- Parity type: '0' - even, '1' - odd
+    );
+end uart_tb;
 
-architecture Behavioral of uart-tb is
+architecture uart_tb of uart_tb is
+    signal clk : std_logic := '0';
+    signal rst : std_logic := '0';
+
+    -- TX pins
+    signal tx_pdata      :   std_logic_vector(DATA_WIDTH - 1 downto 0);  -- Parallel RX data
+    signal tx_send_data  :   std_logic := '0';                                  -- Send data enable
+    signal tx_busy       :  std_logic;                                  -- UART TX busy
+    signal tx_sdata      :  std_logic;                                  -- Serial TX DATA_WIDTH
+
+    -- RX pins
+    signal rx_sdata       : std_logic := '1';                                 -- Serial data
+    signal rx_pdata       :   std_logic_vector(DATA_WIDTH - 1 downto 0); -- Parallel TX data
+    signal rx_pdata_valid :   std_logic;                                 -- Parallel RX data valid
+    signal rx_frame_err   :   std_logic;                                 -- Frame error
+    signal rx_parity_err  :   std_logic;                                  -- Parity error
+constant period_baud : time :=17361 ns;
 
 begin
+  uut: entity work.uart
+    port map (
+    clk => clk,
+    rst => rst,
+
+    -- TX pins
+    tx_pdata     => tx_pdata,  -- Parallel RX data
+    tx_send_data  => tx_send_data,                                 -- Send data enable
+    tx_busy    => tx_busy,                          -- UART TX busy
+    tx_sdata     =>tx_sdata,                                 -- Serial TX DATA_WIDTH
+
+    -- RX pins
+    rx_sdata     =>rx_sdata,                               -- Serial data
+    rx_pdata     =>rx_pdata, -- Parallel TX data
+    rx_pdata_valid => rx_pdata_valid,                          -- Parallel RX data valid
+    rx_frame_err  =>rx_frame_err,                         -- Frame error
+    rx_parity_err =>rx_parity_err                                 -- Parity error
+      );
+  clk <= not clk after 5 ns;
+  process
+  begin
+      rst <= '1';
+      wait for 10 ns;
+      rst <= '0';
+      wait for 10 ns;
+      tx_pdata <= "11100110";
+         wait for period_baud;
+     tx_send_data <= '1';
+        wait for period_baud;
+--      rx_sdata <= '1';
+
+--      wait for 17361 ns;
+--      rx_sdata <= '0';
+--      wait for 17361 ns;
+--      rx_sdata <= '1';
+--      wait for 17361 ns;
+--      rx_sdata <= '0';
+--      wait for 17361 ns;
+--      rx_sdata <= '1';
+--      wait for 17361 ns;
+--      rx_sdata <= '0';
+--      wait for 17361 ns;
+--      rx_sdata <= '1';
+--      wait for 17361 ns;
+--      rx_sdata <= '0';
+--      wait for 17361 ns;
+--      rx_sdata <= '1';
+--      wait for 17361 ns;
+--      rx_sdata <= '0';
+--      wait for 17361 ns;
+--      rx_sdata <= '1';
+--      wait for 17361 ns;
+--      rx_sdata <= '1';
+--      wait for 17361 ns;
+--      rx_sdata <= '1';
 
 
-end Behavioral;
+--      wait for 100 ns;
+--      assert rx_pdata = "11111111"
+--        report
+--"failed"
+--        severity error;
+
+    wait for 50 ns;
+
+    assert false report "Simulation ended" severity failure;
+  end process;
+
+
+end uart_tb;

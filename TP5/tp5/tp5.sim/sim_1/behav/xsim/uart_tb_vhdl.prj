@@ -1,0 +1,13 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../tp5.srcs/sources_1/imports/labo5-communication-serielle/common-utils.vhd" \
+"../../../../tp5.srcs/sources_1/imports/labo5-communication-serielle/clk-divider.vhd" \
+"../../../../tp5.srcs/sources_1/imports/labo5-communication-serielle/ffd.vhd" \
+"../../../../tp5.srcs/sources_1/imports/labo5-communication-serielle/synchronizer.vhd" \
+"../../../../tp5.srcs/sources_1/imports/labo5-communication-serielle/edge-detector.vhd" \
+"../../../../tp5.srcs/sources_1/imports/labo5-communication-serielle/reg-clken.vhd" \
+"../../../../tp5.srcs/sources_1/imports/labo5-communication-serielle/uart.vhd" \
+"../../../../tp5.srcs/sim_1/new/uart-tb.vhd" \
+
+# Do not sort compile order
+nosort
