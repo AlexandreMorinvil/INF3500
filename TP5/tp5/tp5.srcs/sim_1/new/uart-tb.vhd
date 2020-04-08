@@ -90,35 +90,38 @@ begin
       wait for 10 ns;
       rst <= '0';
       wait for 10 ns;
-      tx_pdata <= "11100110";
-         wait for period_baud;
-     tx_send_data <= '1';
-        wait for period_baud;
---      rx_sdata <= '1';
+      -- test du tx : fonctionne bien, à refaire plus proprement
+      tx_pdata <= "10000001";
+      wait for period_baud;
+      tx_send_data <= '1';
+      wait for 100 ns;
+      tx_send_data <= '0';
+      wait for 100*period_baud;
+      rx_sdata <= '1';
 
---      wait for 17361 ns;
+--      wait for period_baud;
 --      rx_sdata <= '0';
---      wait for 17361 ns;
+--      wait for period_baud;
 --      rx_sdata <= '1';
---      wait for 17361 ns;
+--      wait for period_baud;
 --      rx_sdata <= '0';
---      wait for 17361 ns;
+--      wait for period_baud;
 --      rx_sdata <= '1';
---      wait for 17361 ns;
+--      wait for period_baud;
 --      rx_sdata <= '0';
---      wait for 17361 ns;
+--      wait for period_baud;
 --      rx_sdata <= '1';
---      wait for 17361 ns;
+--      wait for period_baud;
 --      rx_sdata <= '0';
---      wait for 17361 ns;
+--      wait for period_baud;
 --      rx_sdata <= '1';
---      wait for 17361 ns;
+--      wait for period_baud;
 --      rx_sdata <= '0';
---      wait for 17361 ns;
+--      wait for period_baud;
 --      rx_sdata <= '1';
---      wait for 17361 ns;
+--      wait for period_baud;
 --      rx_sdata <= '1';
---      wait for 17361 ns;
+--      wait for period_baud;
 --      rx_sdata <= '1';
 
 

@@ -51,7 +51,7 @@ end uart;
 architecture uart of uart is
 
   type uart_rx_fsm is (idle_st, stop_st,delay_st, data_st);
-  type uart_tx_fsm is (idle_st, send_st);
+  type uart_tx_fsm is (idle_st, start_st, send_st);
 
   signal uart_rx : uart_rx_fsm := idle_st;
   signal uart_tx : uart_tx_fsm := idle_st;
@@ -186,14 +186,18 @@ begin
 
         when idle_st =>
             if tx_send_data = '1' then
+                uart_tx <= start_st;
+            end if;
+        when start_st =>
+          if clk_tx ='1' then
                 uart_tx <= send_st;
                 tx_sdata <= '0';
-            end if;
-            
+                data_cnt_tx <= 0;
+          end if;
         when send_st =>
             if clk_tx ='1' then
                 if data_cnt_tx = DATA_WIDTH then
-                    rx_parity_err <= parity_tx;
+                    tx_sdata <= parity_tx;
                 else if data_cnt_tx = DATA_WIDTH +1 then
                     tx_sdata <= '1';
                     uart_tx <= idle_st;
@@ -202,9 +206,9 @@ begin
                     if tx_pdata(data_cnt_tx) = PARITY_TYPE then
                         parity_tx <= not parity_tx;
                     end if;
-                    data_cnt_tx <= data_cnt_tx +1;
                 end if;
                 end if;
+                data_cnt_tx <= data_cnt_tx +1;
             end if;
        end case;
     end if;
