@@ -132,20 +132,26 @@ begin
         when idle_st =>
             if rx_start_bit = '1' then
                 uart_rx <= delay_st;
+                cnt <= 0;
             end if;
         
        when delay_st =>
             if cnt = BUS_FREQUENCY/(BAUD_RATE*2) then
                 rx_frame_rst <= '1';
                 uart_rx <= data_st;
+                data_cnt_rx <= 0;
+                parity_rx <= '1';
             else
                 cnt <= cnt + 1;
             end if;
        when data_st =>
-            if clk_rx = '1' then
+           rx_frame_rst <= '0';
+           if clk_rx = '1' then
                 if data_cnt_rx = DATA_WIDTH then
                     if not parity_rx = rx_sdata_sync then
                         rx_parity_err <= '1';
+                    else
+                        rx_parity_err <= '0';
                     end if;
                     uart_rx <= stop_st;
                 else
@@ -159,9 +165,10 @@ begin
             
         when stop_st =>
             if clk_rx = '1' then
-
                 if rx_sdata_sync = '0' then
-                     rx_frame_err <= '1';
+                    rx_frame_err <= '1';
+                else
+                    rx_frame_err <= '0';
                 end if;
                 uart_rx <= idle_st;
             end if;
@@ -193,6 +200,7 @@ begin
                 uart_tx <= send_st;
                 tx_sdata <= '0';
                 data_cnt_tx <= 0;
+                parity_tx <= '1';
           end if;
         when send_st =>
             if clk_tx ='1' then
