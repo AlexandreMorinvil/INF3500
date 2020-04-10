@@ -19,8 +19,6 @@
 ----------------------------------------------------------------------------------
 
 
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
 
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
@@ -35,7 +33,7 @@ use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 use ieee.math_real.all;
 use std.textio.all;
-
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
 entity uart_tb is
   generic(
     BUS_FREQUENCY : integer   := 1E8;    -- Usually the same as the clk' frequency
@@ -63,6 +61,14 @@ architecture uart_tb of uart_tb is
     signal rx_frame_err   :   std_logic;                                 -- Frame error
     signal rx_parity_err  :   std_logic;                                  -- Parity error
 constant period_baud : time :=17361 ns;
+function logic2str(vector: std_logic_vector) return string is
+begin
+return integer'image(to_integer(unsigned(vector)));
+end function;
+function logic2str(vector: std_logic) return string is
+begin
+return std_logic'image(vector);
+end function;
 
 begin
   uut: entity work.uart
@@ -86,20 +92,14 @@ begin
   clk <= not clk after 5 ns;
   process
   begin
+      --TEST 1 rx : un message  correct
       rst <= '1';
       wait for 10 ns;
       rst <= '0';
       wait for 10 ns;
-      -- test du tx : fonctionne bien, à refaire plus proprement
---      tx_pdata <= "10000001";
---      wait for period_baud;
---      tx_send_data <= '1';
---      wait for 100 ns;
---      tx_send_data <= '0';
---      wait for 100*period_baud;
       rx_sdata <= '1';
 
-      wait for period_baud*5;
+      wait for 25000 ns;
       rx_sdata <= '0';
       wait for period_baud;
       rx_sdata <= '1';
@@ -121,16 +121,220 @@ begin
       rx_sdata <= '1';
       wait for period_baud;
       rx_sdata <= '1';
+      
+      wait until rx_pdata_valid = '1';
       wait for period_baud;
+      assert rx_pdata = "01010101" and rx_frame_err = '0' and rx_parity_err = '0'
+        report
+        "Envoie d'un message sans erreur a échoué, data = " & logic2str(rx_pdata) & 
+        ", frame err = " & logic2str(rx_frame_err) & ", parity = " & logic2str(rx_parity_err) & "."
+        severity error;
+      
+      -- TEST 2 rx : un message correct de 16 bits
+      rst <= '1';
+      wait for 10 ns;
+      rst <= '0';
+      wait for 10 ns;
       rx_sdata <= '1';
-      wait for 100*period_baud;
 
+      wait for 25000 ns;
+      rx_sdata <= '0';
+      wait for period_baud;
+      rx_sdata <= '1';
+      wait for period_baud;
+      rx_sdata <= '1';
+      wait for period_baud;
+      rx_sdata <= '1';
+      wait for period_baud;
+      rx_sdata <= '1';
+      wait for period_baud;
+      rx_sdata <= '1';
+      wait for period_baud;
+      rx_sdata <= '1';
+      wait for period_baud;
+      rx_sdata <= '1';
+      wait for period_baud;
+      rx_sdata <= '1';
+      wait for period_baud;
+      rx_sdata <= '1';
+      wait for period_baud;
+      rx_sdata <= '1';
+      
+      wait until rx_pdata_valid = '1';
+      wait for period_baud;
+      assert rx_pdata = "11111111" and rx_frame_err = '0' and rx_parity_err = '0'
+        report
+        "Envoie de la premiere partie du message a échoué, data = " & logic2str(rx_pdata) & 
+        ", frame err = " & logic2str(rx_frame_err) & ", parity = " & logic2str(rx_parity_err) & "."
+        severity error;
+      rx_sdata <= '0';
+      wait for period_baud;
+      rx_sdata <= '0';
+      wait for period_baud;
+      rx_sdata <= '0';
+      wait for period_baud;
+      rx_sdata <= '0';
+      wait for period_baud;
+      rx_sdata <= '0';
+      wait for period_baud;
+      rx_sdata <= '0';
+      wait for period_baud;
+      rx_sdata <= '0';
+      wait for period_baud;
+      rx_sdata <= '0';
+      wait for period_baud;
+      rx_sdata <= '0';
+      wait for period_baud;
+      rx_sdata <= '1';
+      wait for period_baud;
+      rx_sdata <= '1';
+      
+      wait until rx_pdata_valid = '1';
+      wait for period_baud;
+      assert rx_pdata = "00000000" and rx_frame_err = '0' and rx_parity_err = '0'
+        report
+        "Envoie de la deuxième partie du message a échoué, data = " & logic2str(rx_pdata) & 
+        ", frame err = " & logic2str(rx_frame_err) & ", parity = " & logic2str(rx_parity_err) & "."
+        severity error;
+      --TEST 3 rx : un message avec une mauvaise condition STOP
+      rst <= '1';
+      wait for 10 ns;
+      rst <= '0';
+      wait for 10 ns;
+      rx_sdata <= '1';
 
---      wait for 100 ns;
---      assert rx_pdata = "11111111"
---        report
---"failed"
---        severity error;
+      wait for 25000 ns;
+      rx_sdata <= '0';
+      wait for period_baud;
+      rx_sdata <= '0';
+      wait for period_baud;
+      rx_sdata <= '0';
+      wait for period_baud;
+      rx_sdata <= '0';
+      wait for period_baud;
+      rx_sdata <= '0';
+      wait for period_baud;
+      rx_sdata <= '1';
+      wait for period_baud;
+      rx_sdata <= '1';
+      wait for period_baud;
+      rx_sdata <= '1';
+      wait for period_baud;
+      rx_sdata <= '0';
+      wait for period_baud;
+      rx_sdata <= '0';
+      wait for period_baud;
+      rx_sdata <= '0';
+      
+      wait until rx_pdata_valid = '1';
+      wait for period_baud;
+      assert rx_pdata = "01110000" and rx_frame_err = '1' and rx_parity_err = '0'
+        report
+        "Envoie d'un message avec une mauvaise condition STOP a échoué, data = " & logic2str(rx_pdata) & 
+        ", frame err = " & logic2str(rx_frame_err) & ", parity = " & logic2str(rx_parity_err) & "."
+        severity error;
+        -- TEST 4 rx : un message avec une mauvaise parité
+      rst <= '1';
+      wait for 10 ns;
+      rst <= '0';
+      wait for 10 ns;
+      rx_sdata <= '1';
+
+      wait for 25000 ns;
+      rx_sdata <= '0';
+      wait for period_baud;
+      rx_sdata <= '1';
+      wait for period_baud;
+      rx_sdata <= '1';
+      wait for period_baud;
+      rx_sdata <= '1';
+      wait for period_baud;
+      rx_sdata <= '1';
+      wait for period_baud;
+      rx_sdata <= '1';
+      wait for period_baud;
+      rx_sdata <= '0';
+      wait for period_baud;
+      rx_sdata <= '0';
+      wait for period_baud;
+      rx_sdata <= '0';
+      wait for period_baud;
+      rx_sdata <= '1';
+      wait for period_baud;
+      rx_sdata <= '1';
+      
+      wait until rx_pdata_valid = '1';
+      wait for period_baud;
+      assert rx_pdata = "00011111" and rx_frame_err = '0' and rx_parity_err = '1'
+        report
+        "Envoie d'un message avec une mauvaise parité a échoué, data = " & logic2str(rx_pdata) & 
+        ", frame err = " & logic2str(rx_frame_err) & ", parity = " & logic2str(rx_parity_err) & "."
+        severity error;
+        
+        -- TEST 1 tx : transmission d'un message (et vérification du résultat)
+        
+                    -- test du tx : fonctionne bien, à refaire plus proprement
+      tx_pdata <= "00100001";
+      wait for period_baud;
+      tx_send_data <= '1';
+      wait for 100 ns;
+      tx_send_data <= '0';
+      wait for period_baud;
+      assert tx_sdata = '0'
+        report
+            "Envoie d'un message TX a échoué au start"
+            severity error;
+      wait for period_baud;
+      assert tx_sdata = '1'
+        report
+            "Envoie d'un message TX a échoué au bit 0"
+            severity error;
+      wait for period_baud;
+      assert tx_sdata = '0'
+        report
+            "Envoie d'un message TX a échoué au bit 1"
+            severity error;
+      wait for period_baud;
+      assert tx_sdata = '0'
+        report
+            "Envoie d'un message TX a échoué au bit 2"
+            severity error;
+      wait for period_baud;
+      assert tx_sdata = '0'
+        report
+            "Envoie d'un message TX a échoué au bit 3"
+            severity error;
+      wait for period_baud;
+      assert tx_sdata = '0'
+        report
+            "Envoie d'un message TX a échoué au bit 4"
+            severity error;
+      wait for period_baud;
+      assert tx_sdata = '1'
+        report
+            "Envoie d'un message TX a échoué au bit 5"
+            severity error;
+      wait for period_baud;
+      assert tx_sdata = '0'
+        report
+            "Envoie d'un message TX a échoué au bit 6"
+            severity error;
+      wait for period_baud;
+      assert tx_sdata = '0'
+        report
+            "Envoie d'un message TX a échoué au bit 7"
+            severity error;
+      wait for period_baud;
+      assert tx_sdata = '1'
+        report
+            "Envoie d'un message TX a échoué au bit parity"
+            severity error;
+      wait for period_baud;
+      assert tx_sdata = '1'
+        report
+            "Envoie d'un message TX a échoué au bit stop"
+            severity error;
+
 
     wait for 50 ns;
 

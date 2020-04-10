@@ -153,23 +153,25 @@ begin
                     else
                         rx_parity_err <= '0';
                     end if;
+                else if data_cnt_rx = DATA_WIDTH + 1 then
+                    if rx_sdata_sync = '0' then
+                        rx_frame_err <= '1';
+                    else
+                        rx_frame_err <= '0';
+                    end if;
                     uart_rx <= stop_st;
                 else
                     rx_pdata(data_cnt_rx) <= rx_sdata_sync;
                     if rx_sdata_sync = PARITY_TYPE then
                         parity_rx <= not parity_rx;
                     end if;
-                    data_cnt_rx <= data_cnt_rx +1;
                 end if;
+                end if;
+                data_cnt_rx <= data_cnt_rx +1;
             end if;
             
         when stop_st =>
             if clk_rx = '1' then
-                if rx_sdata_sync = '0' then
-                    rx_frame_err <= '1';
-                else
-                    rx_frame_err <= '0';
-                end if;
                 uart_rx <= idle_st;
             end if;
       end case;
