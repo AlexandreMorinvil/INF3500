@@ -147,13 +147,13 @@ begin
        when data_st =>
            rx_frame_rst <= '0';
            if clk_rx = '1' then
-                if data_cnt_rx = DATA_WIDTH then
+                if PARITY_EN and data_cnt_rx = DATA_WIDTH then
                     if not parity_rx = rx_sdata_sync then
                         rx_parity_err <= '1';
                     else
                         rx_parity_err <= '0';
                     end if;
-                else if data_cnt_rx = DATA_WIDTH + 1 then
+                else if (PARITY_EN and data_cnt_rx = DATA_WIDTH + 1) or data_cnt_rx = DATA_WIDTH then
                     if rx_sdata_sync = '0' then
                         rx_frame_err <= '1';
                     else
@@ -206,9 +206,9 @@ begin
           end if;
         when send_st =>
             if clk_tx ='1' then
-                if data_cnt_tx = DATA_WIDTH then
+                if PARITY_EN and data_cnt_tx = DATA_WIDTH then
                     tx_sdata <= parity_tx;
-                else if data_cnt_tx = DATA_WIDTH +1 then
+                else if (PARITY_EN and data_cnt_tx = DATA_WIDTH +1) or data_cnt_tx = DATA_WIDTH then
                     tx_sdata <= '1';
                     uart_tx <= idle_st;
                 else
