@@ -5,29 +5,8 @@
 -- Create Date: 04/01/2020 10:09:01 AM
 -- Design Name: 
 -- Module Name: uart-tb - Behavioral
--- Project Name: 
--- Target Devices: 
--- Tool Versions: 
--- Description: 
--- 
--- Dependencies: 
--- 
--- Revision:
--- Revision 0.01 - File Created
--- Additional Comments:
--- 
-----------------------------------------------------------------------------------
-
-
-
--- Uncomment the following library declaration if using
--- arithmetic functions with Signed or Unsigned values
---use IEEE.NUMERIC_STD.ALL;
-
--- Uncomment the following library declaration if instantiating
--- any Xilinx leaf cells in this code.
---library UNISIM;
---use UNISIM.VComponents.all;
+-- Created:  02-04-2020
+-- By: Alexandre Morinvil - 1897222 & Nicolas Valenchon - 2032097
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;

@@ -9,7 +9,8 @@
 --
 -- This is an interface to RX and TX of UART
 
-
+-- Modified:  02-04-2020
+-- By: Alexandre Morinvil - 1897222 & Nicolas Valenchon - 2032097
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.math_real.all;
